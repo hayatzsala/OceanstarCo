@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url(font-awesome.min.css);
+@import url('font-awesome.min.css');
 @import url("https://fonts.googleapis.com/css?family=Lobster|Open+Sans:300,400,600,700,800");
 
 
@@ -3461,7 +3461,7 @@
 		-ms-transition: -ms-transform 0.5s ease, box-shadow 0.5s ease, visibility 0.5s;
 		transition: transform 0.5s ease, box-shadow 0.5s ease, visibility 0.5s;
 		-webkit-overflow-scrolling: touch;
-		background: #f64242;
+		background:  #008787;
 		box-shadow: none;
 		color: #ffffff;
 		height: 100%;
@@ -3515,7 +3515,7 @@
 			transition: color 0.2s ease-in-out;
 			-webkit-tap-highlight-color: transparent;
 			border: 0;
-			color: #fbb5b5;
+			color:  #008787;
 			cursor: pointer;
 			display: block;
 			height: 3.25em;
@@ -4173,10 +4173,10 @@
 /* Footer */
 
 	#footer {
-		background-color: #F64747;
-		color: #fdd1d1;
+		background-color: #00aeae;
+		color: #008787;
 		padding: 6em 0 4em 0;
-		background: #F64747;
+		background: #00aeae;
 	}
 
 		#footer input, #footer select, #footer textarea {
