@@ -61,12 +61,13 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 0 10px;
   font-weight:700;
 }
-a {transition: all 0.3s ease 0s;text-decoration:none;}
+a {transition: all 0.3s ease 0s;text-decoration:none; color: #00aeae;}
 a:hover {
   color: #00aeae;
   text-decoration: none;
 }
 a:active, a:hover, a:focus {
+     color: #00aeae;
   outline: 0 none;
   text-decoration: none;
 }
@@ -81,7 +82,7 @@ a:active, a:hover, a:focus {
             position: absolute;
             top: 0;
         }
-        #header .logo .special {
+        #header .logo  .special {
                 font-size: 1.25em;
                 color: #fff;
                 font-weight: 600;
@@ -197,7 +198,7 @@ body {}
 /*  2.  Header Top CSS
 /*----------------------------------------*/
 .header-top-area, .footer-copyright-area{
-	background:#00c292;
+	background:#008787;
 }
 .logo-area{
 	padding:14px 0px;
@@ -206,13 +207,13 @@ body {}
 	float: right;
 }
 .nav.notika-top-nav .open>a, .nav.notika-top-nav .open>a:focus, .nav.notika-top-nav .open>a:hover {
-    background: #00c292;
-    border-color: 0px solid #00c292;
+    background: #008787;
+    border-color: 0px solid #008787;
 	
 }
 .nav.notika-top-nav>li>a:focus, .nav.notika-top-nav>li>a:hover {
     text-decoration: none;
-    background-color: #00c292;
+  background-color: #008787;
 }
 .navbar-nav>li>a{
 	color:#fff;
@@ -4639,6 +4640,20 @@ body.box-layout {
 	position: relative;
     top: 2px;
 }
+.text{
+    position: relative;
+    padding-top: 6px;
+    padding-bottom: 2px;
+     padding-left: 4px;
+    padding-right: 4px;
+}
+.text p{
+    font-size: 21px;
+    font-family: Verdana;
+    text-align: center;
+    font-style: italic;
+}
+
 /*----------------------------------------*/
 /*  59. Notika custom scrollbar CSS
 /*----------------------------------------*/
