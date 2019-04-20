@@ -121,5 +121,11 @@
             });
          $('#Reset').click(function(){
             $('#password-section').css("display","block");
+            $('#data-section').css("display","none");
          });
+
+         $('#Save').click(function(){
+            $('#password-section').css("display","none");
+            $('#data-section').css("display","block");
+         })
      });
