@@ -7,72 +7,44 @@
     <title>My Profile</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- favicon
-		============================================ -->
+
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
-    <!-- Google Fonts
-		============================================ -->
+    <script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
+  
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
-    <!-- Bootstrap CSS
-		============================================ -->
+
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <!-- font awesome CSS
-		============================================ -->
+
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-    <!-- owl.carousel CSS
-		============================================ -->
+
     <link rel="stylesheet" href="assets/css/owl.carousel.css">
     <link rel="stylesheet" href="assets/css/owl.theme.css">
     <link rel="stylesheet" href="assets/css/owl.transitions.css">
-    <!-- meanmenu CSS
-		============================================ -->
+
     <link rel="stylesheet" href="assets/css/meanmenu/meanmenu.min.css">
-    <!-- animate CSS
-		============================================ -->
+
     <link rel="stylesheet" href="assets/css/animate.css">
-    <!-- normalize CSS
-		============================================ -->
+
     <link rel="stylesheet" href="assets/css/normalize.css">
-    <!-- mCustomScrollbar CSS
-		============================================ -->
+   
     <link rel="stylesheet" href="assets/css/scrollbar/jquery.mCustomScrollbar.min.css">
-    <!-- jvectormap CSS
-		============================================ -->
+
     <link rel="stylesheet" href="assets/css/jvectormap/jquery-jvectormap-2.0.3.css">
-    <!-- Notika icon CSS
-		============================================ -->
+
     <link rel="stylesheet" href="assets/css/notika-custom-icon.css">
-    <!-- wave CSS
-		============================================ -->
+ 
     <link rel="stylesheet" href="assets/css/wave/waves.min.css">
-    <!-- main CSS
-		============================================ -->
+
     <link rel="stylesheet" href="assets/css/main2.css">
-    <!-- style CSS
-		============================================ -->
+
     <link rel="stylesheet" href="assets/css/style.css">
-    <!-- responsive CSS
-		============================================ -->
+
     <link rel="stylesheet" href="assets/css/responsive.css">
-    <!-- modernizr JS
-		============================================ -->
+
      <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">   
     <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
-    <script >
-        $(document).ready(function(){
-        $("#home-tapped").click(function(){
-        $("#home").css("display", "block");
-        $("#email").css("display","none");
-            });
-        $("#Email-tapped").click(function(){
-        $("#home").css("display", "none");
-        $("#email").css("display","block");
-            });
-        // $("#home-tapped").active(function(){
-        // $("#home").css("display", "block");
-        //     });
-         });
+    <script  src="assets/js/myCode.js">
     </script>
 </head>
 
@@ -90,111 +62,17 @@
                     <div class="header-top-menu">
                         <ul class="nav navbar-nav notika-top-nav">
                          
-                            <!-- <li class="nav-item dropdown">
-                                <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-search"></i></span></a>
-                                <div role="menu" class="dropdown-menu search-dd animated flipInX">
-                                    <div class="search-input">
-                                        <i class="notika-icon notika-left-arrow"></i>
-                                        <input type="text" />
-                                    </div>
-                                </div>
-                            </li> -->
-                            <li class="nav-item dropdown" style="float: left">
-                                <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-mail"></i></span></a>
+                            <li class="nav-item dropdown" >
+                                <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><ion-icon name="cog"></ion-icon></span></a>
                                 <div role="menu" class="dropdown-menu message-dd animated zoomIn">
                                     <div class="hd-mg-tt">
-                                        <h2>Emails</h2>
+                                        <h2><a href="login-register.html"><ion-icon name="power"></ion-icon>Sign Out </a> </h2>
+                                        <h2><a href="#" id="edit-button"><ion-icon name="create"></ion-icon>Edit profile </a> </h2>
                                     </div>
-                                    <div class="hd-message-info">
-                                        <!-- <a href="#">
-                                            <div class="hd-message-sn">
-                                                <div class="hd-message-img">
-                                                    <img src="img/post/1.jpg" alt="" />
-                                                </div>
-                                                <div class="hd-mg-ctn">
-                                                    <h3>David Belle</h3>
-                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
-                                                </div>
-                                            </div>
-                                        </a> -->
-
-                                    </div>
-                                    <div class="hd-mg-va">
-                                        <a href="#">View All</a>
-                                    </div>
+                                    
                                 </div>
                             </li>
-                          <!--   <li class="nav-item nc-al"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
-                                <span><i class="notika-icon notika-alarm"></i></span><div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>3</span></div></a>
-                                <div role="menu" class="dropdown-menu message-dd notification-dd animated zoomIn">
-                                    <div class="hd-mg-tt">
-                                        <h2>Notification</h2>
-                                    </div>
-                                    <div class="hd-message-info">
-                                        <a href="#">
-                                            <div class="hd-message-sn">
-                                                <div class="hd-message-img">
-                                                    <img src="img/post/1.jpg" alt="" />
-                                                </div>
-                                                <div class="hd-mg-ctn">
-                                                    <h3>David Belle</h3>
-                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        </div>
-                                        </a>
-                                    </div>
-                                    <div class="hd-mg-va">
-                                        <a href="#">View All</a>
-                                    </div>
-                                </div>
-                            </li> -->
-                            <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-menus"></i></span><div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>2</span></div></a>
-                                <div role="menu" class="dropdown-menu message-dd task-dd animated zoomIn">
-                                    <div class="hd-mg-tt">
-                                        <h2>Tasks</h2>
-                                    </div>
-                                    <div class="hd-message-info hd-task-info">
-                                        <div class="skill">
-                                            <div class="progress">
-                                                <div class="lead-content">
-                                                    <p>HTML5 Validation Report</p>
-                                                </div>
-                                                <div class="progress-bar wow fadeInLeft" data-progress="95%" style="width: 95%;" data-wow-duration="1.5s" data-wow-delay="1.2s"> <span>95%</span>
-                                                </div>
-                                            </div>
-                                            <div class="progress">
-                                                <div class="lead-content">
-                                                    <p>Google Chrome Extension</p>
-                                                </div>
-                                                <div class="progress-bar wow fadeInLeft" data-progress="85%" style="width: 85%;" data-wow-duration="1.5s" data-wow-delay="1.2s"><span>85%</span> </div>
-                                            </div>
-                                            <div class="progress">
-                                                <div class="lead-content">
-                                                    <p>Social Internet Projects</p>
-                                                </div>
-                                                <div class="progress-bar wow fadeInLeft" data-progress="75%" style="width: 75%;" data-wow-duration="1.5s" data-wow-delay="1.2s"><span>75%</span> </div>
-                                            </div>
-                                            <div class="progress">
-                                                <div class="lead-content">
-                                                    <p>Bootstrap Admin</p>
-                                                </div>
-                                                <div class="progress-bar wow fadeInLeft" data-progress="65%" style="width: 65%;" data-wow-duration="1.5s" data-wow-delay="1.2s"><span>65%</span> </div>
-                                            </div>
-                                            <div class="progress progress-bt">
-                                                <div class="lead-content">
-                                                    <p>Youtube App</p>
-                                                </div>
-                                                <div class="progress-bar wow fadeInLeft" data-progress="55%" style="width: 55%;" data-wow-duration="1.5s" data-wow-delay="1.2s"><span>55%</span> </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="hd-mg-va">
-                                        <a href="#">View All</a>
-                                    </div>
-                                </div>
-                            </li>
+                        
                            
                         </ul>
                     </div>
@@ -212,26 +90,26 @@
                     <div class="mobile-menu">
                         <nav id="dropdown">
                             <ul class="mobile-menu-nav">
-                                <li><a data-toggle="collapse" data-target="#Charts" href="#">Home</a>
+                                <li><a data-toggle="collapse" data-target="#home" href="#">Home</a>
                                     
                                 </li>
-                                <li><a data-toggle="collapse" data-target="#demoevent" href="#">Email</a>
+                                <li><a data-toggle="collapse" data-target="#email" href="#">Email</a>
                                    
                                 </li>
-                                <li><a data-toggle="collapse" data-target="#democrou" href="#">My Profile</a>
+                                <li><a data-toggle="collapse" data-target="#Profile" href="#">My Profile</a>
                                     
                                 </li>
-                                <li><a data-toggle="collapse" data-target="#demolibra" href="#">Charts</a>
+                                <li><a data-toggle="collapse" data-target="#" href="#">Charts</a>
                                     
                                 </li>
-                                <li><a data-toggle="collapse" data-target="#demodepart" href="#">Tables</a>
+                                <li><a data-toggle="collapse" data-target="#" href="#">Tables</a>
                                     <ul id="demodepart" class="collapse dropdown-header-top">
-                                        <li><a href="#">Customers</a></li>
-                                        <li><a href="#">Admins</a></li>
-                                        <li><a href="#">Tours</a></li>
-                                        <li><a href="#">Hotels</a></li>
-                                        <li><a href="#">Cars</a></li>
-                                        <li><a href="#">Flights</a></li>
+                                        <li><a href="#Users">Customers</a></li>
+                                        <li><a href="#Admins">Admins</a></li>
+                                        <li><a href="#Tours">Tours</a></li>
+                                        <li><a href="#Hotels">Hotels</a></li>
+                                        <li><a href="#Cars">Cars</a></li>
+                                        <li><a href="#Flights">Flights</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -251,7 +129,7 @@
                     <ul class="nav nav-tabs notika-menu-wrap menu-it-icon-pro">
                         <li class="active" id="home-tapped"><a data-toggle="tab" href="#Home"><i class="notika-icon notika-house"></i> Home</a>
                         </li>
-                        <li id="Email-tapped" ><a data-toggle="tab" href="#mailbox"><i class="notika-icon notika-mail"></i> Email</a>
+                        <li id="Email-tapped" ><a data-toggle="tab" href="#mailbox"><i class="notika-icont notika-mail"></i> Email</a>
                         </li>
                         <li id="profile-tapped"><a data-toggle="tab" href="#Interface"><i class="notika-icon notika-edit"></i> My Profile</a>
                         </li>
@@ -264,17 +142,17 @@
                      
                         <div id="Tables" class="tab-pane notika-tab-menu-bg animated flipInX">
                             <ul class="notika-main-menu-dropdown">
-                                <li><a href="normal-table.html">Customers</a>
+                                <li id="Users-tapped"><a href="#Users">Customers</a>
                                 </li>
-                                <li><a href="data-table.html">Admins</a>
+                                <li id="Admins-tapped"><a href="#Admins">Admins</a>
                                 </li>
-                                <li><a href="data-table.html">Tours</a>
+                                <li id="Tours-tapped"><a href="#Tours">Tours</a>
                                 </li>
-                                <li><a href="data-table.html">Hotels</a>
+                                <li id="Hotels-tapped"><a href="#Hotels">Hotels</a>
                                 </li>
-                                <li><a href="data-table.html">Flights</a>
+                                <li id="Flights-tapped"><a href="#Flights">Flights</a>
                                 </li>
-                                <li><a href="data-table.html">Cars</a>
+                                <li id="Cars-tapped"><a href="#Cars">Cars</a>
                                 </li>
                             </ul>
                         </div>
@@ -287,7 +165,7 @@
 
     <!-- Main Menu area End-->
     <!-- Start home area -->
-    <div class="notika-status-area" id="home" style="display: none;">
+    <div class="notika-status-area" id="home" style="display: block;">
         <div class="container"  >
             <div class="row">
                 <div class="col-12">
@@ -340,11 +218,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
-                                <div class="breadcomb-report">
-                                    <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><i class="notika-icon notika-sent"></i></button>
-                                </div>
-                            </div> -->
+                        
                         </div>
                     </div>
                 </div>
@@ -439,7 +313,9 @@
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
                                 <div class="breadcomb-report">
-                                    <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><i class="notika-icon notika-sent"></i></button>
+                                    <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><ion-icon name="close"></ion-icon>Delete</button>
+                                    <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><ion-icon name="add-circle-outline"></ion-icon>Add</button>
+                                    <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><ion-icon name="create"></ion-icon>Edit</button>
                                 </div>
                             </div>
                         </div>
@@ -457,7 +333,7 @@
                         </div>
                         <div class="table-responsive">
                             <table id="data-table-basic" class="table table-striped">
-                                <thead>
+                                <thead class="thead-light">
                                     <tr>
                                         <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 150px;" aria-label="Name: activate to sort column ascending" rowspan="1" colspan="1">Name</th>
                                         <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 292px;" aria-label="Position: activate to sort column ascending" rowspan="1" colspan="1">E-mail</th>
@@ -515,7 +391,9 @@
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
                                 <div class="breadcomb-report">
-                                    <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><i class="notika-icon notika-sent"></i></button>
+                                    <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><ion-icon name="close"></ion-icon>Delete</button>
+                                    <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><ion-icon name="add-circle-outline"></ion-icon>Add</button>
+                                    <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><ion-icon name="create"></ion-icon>Edit</button>
                                 </div>
                             </div>
                         </div>
@@ -533,7 +411,7 @@
                         </div>
                         <div class="table-responsive">
                             <table id="data-table-basic" class="table table-striped">
-                                <thead>
+                                <thead class="thead-light">
                                     <tr>
                                         <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 150px;" aria-label="Name: activate to sort column ascending" rowspan="1" colspan="1">Name</th>
                                         <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 292px;" aria-label="Position: activate to sort column ascending" rowspan="1" colspan="1">E-mail</th>
@@ -591,7 +469,9 @@
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
                                 <div class="breadcomb-report">
-                                    <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><i class="notika-icon notika-sent"></i></button>
+                                   <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><ion-icon name="close"></ion-icon>Delete</button>
+                                    <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><ion-icon name="add-circle-outline"></ion-icon>Add</button>
+                                    <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><ion-icon name="create"></ion-icon>Edit</button>
                                 </div>
                             </div>
                         </div>
@@ -609,7 +489,7 @@
                         </div>
                         <div class="table-responsive">
                             <table id="data-table-basic" class="table table-striped">
-                                <thead>
+                                <thead class="thead-light">
                                     <tr>
                                         <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 65px;" aria-label="Name: activate to sort column ascending" rowspan="1" colspan="1">Name</th>
                                         <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 60px;" aria-label="Name: activate to sort column ascending" rowspan="1" colspan="1">city</th>
@@ -662,7 +542,9 @@
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
                                 <div class="breadcomb-report">
-                                    <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><i class="notika-icon notika-sent"></i></button>
+                                    <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><ion-icon name="close"></ion-icon>Delete</button>
+                                    <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><ion-icon name="add-circle-outline"></ion-icon>Add</button>
+                                    <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><ion-icon name="create"></ion-icon>Edit</button>
                                 </div>
                             </div>
                         </div>
@@ -679,8 +561,8 @@
                             <p>This table contains all details related to hotels stored in database. We can delete,add and edit any of them.</p>
                         </div>
                         <div class="table-responsive">
-                            <table id="data-table-basic" class="table table-striped">
-                                <thead>
+                            <table id="data-table-basic" class="table table-striped ">
+                                <thead class="thead-light">
                                     <tr>
                                         <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 100px;" aria-label="Name: activate to sort column ascending" rowspan="1" colspan="1">Name</th>
                                         <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width:100px;" aria-label="Name: activate to sort column ascending" rowspan="1" colspan="1">city</th>
@@ -713,7 +595,7 @@
         </div>
     </div>
 </div>
-<div class="breadcomb-area" id="Hotels" style="display: block;">
+<div class="breadcomb-area" id="Flights" style="display: none;">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -732,7 +614,9 @@
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
                                 <div class="breadcomb-report">
-                                    <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><i class="notika-icon notika-sent"></i></button>
+                                   <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><ion-icon name="close"></ion-icon>Delete</button>
+                                    <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><ion-icon name="add-circle-outline"></ion-icon>Add</button>
+                                    <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><ion-icon name="create"></ion-icon>Edit</button>
                                 </div>
                             </div>
                         </div>
@@ -750,15 +634,16 @@
                         </div>
                         <div class="table-responsive">
                             <table id="data-table-basic" class="table table-striped">
-                                <thead>
+                                <thead class="thead-light">
                                     <tr>
-                                        <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 100px;" aria-label="Name: activate to sort column ascending" rowspan="1" colspan="1">Airline</th>
+                                        <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 156px;" aria-label="Name: activate to sort column ascending" rowspan="1" colspan="1">Airline</th>
                                         
-                                        <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 100px;" aria-label="Name: activate to sort column ascending" rowspan="1" colspan="1">Country</th>
-                                        <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 90px;" aria-label="Office: activate to sort column ascending" rowspan="1" colspan="1">Time of dep.</th>
-                                        <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 90px;" aria-label="Age: activate to sort column ascending" rowspan="1" colspan="1">Date</th>
-                                        <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 65 px;" aria-label="Salary: activate to sort column ascending" rowspan="1" colspan="1">Rate</th>
-                                        <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 65 px;" aria-label="Salary: activate to sort column ascending" rowspan="1" colspan="1">cost</th>
+                                        <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 150px;" aria-label="Name: activate to sort column ascending" rowspan="1" colspan="1">From</th>
+                                        <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 150px;" aria-label="Name: activate to sort column ascending" rowspan="1" colspan="1">To</th>
+                                        <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 150px;" aria-label="Office: activate to sort column ascending" rowspan="1" colspan="1">Time of dep.</th>
+                                        <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 150px;" aria-label="Age: activate to sort column ascending" rowspan="1" colspan="1">Date</th>
+                                        <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 100 px;" aria-label="Salary: activate to sort column ascending" rowspan="1" colspan="1">Rate</th>
+                                        <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 100 px;" aria-label="Salary: activate to sort column ascending" rowspan="1" colspan="1">cost</th>
                                         
                                         
                                         
@@ -766,13 +651,13 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td class="airline">Al Qauds</td>
-                                        <td class="Country">Palestine</td>
-                                        
-                                        <td class="time">200</td>
-                                        <td class="date">4.4</td>
-                                        <td class="rate">87$</td>
-                                        <td class="cost">200</td>
+                                        <td class="airline">Turkey airline</td>
+                                        <td class="From">Turkey</td>
+                                        <td class="From">Jordan</td>
+                                        <td class="time">10:00</td>
+                                        <td class="date">5/5/2019</td>
+                                        <td class="rate">4.6</td>
+                                        <td class="cost">60$</td>
                                     </tr>                                  
                                 </tbody>
                             </table>
@@ -783,6 +668,183 @@
         </div>
     </div>
 </div>
+
+<div class="breadcomb-area" id="Cars" style="display: none;">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcomb-list">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="breadcomb-wp">
+                                    <div class="breadcomb-icon">
+                                        <i class="notika-icon notika-windows"></i>
+                                    </div>
+                                    <div class="breadcomb-ctn">
+                                        <h2>Cars Table</h2>
+                                        <p>View all avilable car for rent.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
+                                <div class="breadcomb-report">
+                                    <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><ion-icon name="close"></ion-icon>Delete</button>
+                                    <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><ion-icon name="add-circle-outline"></ion-icon>Add</button>
+                                    <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><ion-icon name="create"></ion-icon>Edit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <div class="data-table-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="data-table-list">
+                        <div class="basic-tb-hd">
+                            <p>This table contains all avilable cars for rent by our customers. We can delete,add and edit any of them.</p>
+                        </div>
+                        <div class="table-responsive">
+                            <table id="data-table-basic" class="table table-striped">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 156px;" aria-label="Name: activate to sort column ascending" rowspan="1" colspan="1">Car ID</th>
+                                        
+                                        <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 150px;" aria-label="Name: activate to sort column ascending" rowspan="1" colspan="1">Model Name</th>
+                                        <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 150px;" aria-label="Name: activate to sort column ascending" rowspan="1" colspan="1">Model year</th>
+                                        <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 150px;" aria-label="Office: activate to sort column ascending" rowspan="1" colspan="1">Price/day</th>
+                                        <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 150px;" aria-label="Age: activate to sort column ascending" rowspan="1" colspan="1">Capacity</th>
+                                                                           
+                                        
+                                        
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="carID">4556</td>
+                                        <td class="mName">KIA</td>
+                                        <td class="mYear">2019</td>
+                                        <td class="price">100$</td>
+                                        <td class="capacity">5</td>
+                                    </tr>                                  
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="breadcomb-area" id="Profile" style="display: none;">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                    <div class="breadcomb-list">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="breadcomb-wp">
+                                    <div class="hd-message-img">
+                                    <img src="images/2.png" alt="" />
+                                </div>
+                                    <div class="breadcomb-ctn">
+                                        <h2>Admin name</h2>
+                                        <p>Worker at OceanStars Company.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
+                                <div class="breadcomb-report">
+                                    <button type="button" class="btn btn-secondary btn-sm">
+                                    <ion-icon name="attach"></ion-icon>Upload picture</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                            
+                </div>
+            
+        </div>
+    <div class="container">
+        <div id="data-section" style="display: block;">
+       <form >
+  <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="validationDefault01">First name</label>
+      <input type="text" class="form-control" id="validationDefault01" placeholder="First name" value="" required>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="validationDefault02">Last name</label>
+      <input type="text" class="form-control" id="validationDefault02" placeholder="Last name" value="" required>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="validationDefaultUsername">UserID</label>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroupPrepend2">@</span>
+        </div>
+        <input type="text" class="form-control" id="validationDefaultUsername" placeholder="Username" aria-describedby="inputGroupPrepend2" required>
+      </div>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="col-md-4 mb-3">
+    <label for="exampleInputEmail1">Email</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="col-form-label">
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="validationDefault04">Phone number</label>
+      <input type="text" class="form-control" id="validationDefault04" placeholder=" _ _ _ - _ _ _ - _ _ _ _" required>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="col-md-4 mb-3">
+        <label for="validationDefault04">Gender</label>
+        <select class="custom-select custom-select-lg mb-3">
+            <option selected></option>
+             <option value="1">Male</option>
+             <option value="2">Female</option>
+        </select>
+        
+    </div>
+
+    <div class="col-md-5 mb-3">
+        <label for="validationDefault01" >Birtdate</label>
+        <input type="Date" id="birthdate" class="" placeholder="">
+        
+    </div>
+     
+  </div>
+</div>
+  <div class="form-row" id="password-section" style="display: none;">
+      <div class="col-md-4 mb-3">
+      <label for="validationDefault01">New password</label>
+      <input type="text" class="form-control" id="validationDefault01" placeholder="First name" value="" required>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="validationDefault02">Confirm password</label>
+      <input type="text" class="form-control" id="validationDefault02" placeholder="Last name" value="" required>
+    </div>
+  </div>
+  <div class="form-buttons" >
+  <button class="btn btn-primary" type="submit">Save Changes</button>
+  <button class="btn btn-primary" type="button" id="Reset">Reset password</button>
+  </div>
+</form>
+
+    </div>
+
+
+    </div>
+
+
+
+
+
+
+    </div>
      <!-- end tables ares-->
     <!-- Start Footer area-->
     <div class="footer-copyright-area">
