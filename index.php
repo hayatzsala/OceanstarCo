@@ -21,7 +21,7 @@ include ('db_connection.php');
 </div>
 <?php endif ?>
 <?php if (isset($_SESSION["email"])); ?> 
-<?php endif ?>
+<!-- <?php endif ?> -->
   </div> 
     
     <!-- Header -->
