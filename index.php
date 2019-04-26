@@ -26,14 +26,14 @@ include ('db_connection.php');
     
     <!-- Header -->
     <header id="header">
-      <div class="logo"><a href="index.html">OcaenStar Co.</a></div>
+      <div class="logo"><a href="index.php">OcaenStar Co.</a></div>
       <a href="#menu"><span>Menu</span></a>
     </header>
 
     <!-- Nav -->
     <nav id="menu">
       <ul class="links">
-        <li><a href="index.html">Home</a></li>
+        <li><a href="index.php">Home</a></li>
         <li><a href="AboutUS.html">About Us</a></li>
         <li><a href="Packages.html">Packages</a></li>
         <li><a href="login-register.html">Sign In</a></li>
