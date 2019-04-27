@@ -7,16 +7,17 @@ $email    = "";
 $errors = array(); 
 
 // connect to the database
-$db = mysqli_connect('localhost', 'root', 'ghad664', 'oceanstars');
+$db = mysqli_connect("localhost", "root", "");
+mysqli_select_db($db,"oceanstars");
 
 // REGISTER USER
 if (isset($_POST['register'])) {
   // receive all input values from the form
-  $firstname = mysqli_real_escape_string($db, $_POST['first_name']);
-  $lastname = mysqli_real_escape_string($db, $_POST['last_name']);
-  $email = mysqli_real_escape_string($db, $_POST['email']);
-  $password_1 = mysqli_real_escape_string($db, $_POST['password']);
-  $password_2 = mysqli_real_escape_string($db, $_POST['confirm_password']);
+  $firstname = mysqli_real_escape_string($db, $_POST['fn']);
+  $lastname = mysqli_real_escape_string($db, $_POST['ln']);
+  $email = mysqli_real_escape_string($db, $_POST['remail']);
+  $password_1 = mysqli_real_escape_string($db, $_POST['rpass']);
+  $password_2 = mysqli_real_escape_string($db, $_POST['cpass']);
 
   // form validation: ensure that the form is correctly filled ...
   // by adding (array_push()) corresponding error unto $errors array
@@ -54,9 +55,9 @@ if (isset($_POST['register'])) {
 }
 }
 
-if (isset($_POST['register'])) {
-  $email = mysqli_real_escape_string($db, $_POST['email']);
-  $password = mysqli_real_escape_string($db, $_POST['password']);
+if (isset($_POST['login'])) {
+  $email = mysqli_real_escape_string($db, $_POST['remail']);
+  $password = mysqli_real_escape_string($db, $_POST['rpass']);
 
   if (empty($email)) {
   	array_push($errors, "Username is required");
@@ -64,6 +65,27 @@ if (isset($_POST['register'])) {
   if (empty($password)) {
   	array_push($errors, "Password is required");
   }
+
+  $check_email_query="select * from users WHERE email='$email'";
+  $run_query=mysqli_query($db,$check_email_query);
+
+  if(mysqli_num_rows($run_query)>0)
+  {
+
+      echo "<script>alert('Email $user_email is already exist in our database, Please try another one!')</script>";
+      exit();
+  }
+//insert the user into the database.
+  $insert_user="insert into clients (fname,lname,username,password,birthdate,gender,phone-no,email) VALUE ('$user_name','$user_pass','$user_email','$age')";
+  if(mysqli_query($dbcon,$insert_user))
+  {
+      echo"<script>window.open('welcome.php','_self')</script>";
+  }
+
+
+
+}
+
 
   if (count($errors) == 0) {
   	$password = md5($password);
@@ -78,5 +100,5 @@ if (isset($_POST['register'])) {
   		array_push($errors, "Wrong username/password combination");
   	}
   }
-}
+
 ?>

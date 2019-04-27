@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<?php 
-include ('db_connection.php');
+<?php
+//session_start();
+include 'config.php';
 ?>
+
 <html>
   <head>
     <title>OceanStar Company</title>
@@ -10,20 +12,6 @@ include ('db_connection.php');
     <link rel="stylesheet" href="assets/css/main.css" />
   </head>
   <body>
-    <div> <?php if (isset($_SESSION['success'])) : ?> 
-    <div>
-      <h3>
-        <?php echo $_SESSION['success'];
-        unset($_SESSION['success']);
-        ?>
-
-</h3>
-</div>
-<?php endif ?>
-<?php if (isset($_SESSION["email"])); ?> 
-<!-- <?php endif ?> -->
-  </div> 
-    
     <!-- Header -->
     <header id="header">
       <div class="logo"><a href="index.html">OcaenStar Co.</a></div>
@@ -33,11 +21,19 @@ include ('db_connection.php');
     <!-- Nav -->
     <nav id="menu">
       <ul class="links">
-        <li><a href="index.html">Home</a></li>
+        <li><a href="index.php">Home</a></li>
         <li><a href="AboutUS.html">About Us</a></li>
         <li><a href="Packages.html">Packages</a></li>
-        <li><a href="login-register.html">Sign In</a></li>
-        <li><a href="index.php?logout='1'">log out</a></li>
+        
+
+  <li><a href="login-register.php">Sign In</a></li>
+ 
+ 
+
+        <!--<li><a href="login-register.php">Sign In</a></li> -->
+        <li><a href="logout.php">Logout</a></li>
+    
+
       </ul>
     </nav>
 
