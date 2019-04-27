@@ -5,6 +5,11 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>My Profile</title>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.15/datatables.min.css">
+  <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.15/datatables.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://gyrocode.github.io/jquery-datatables-alphabetSearch/1.2.2/css/dataTables.alphabetSearch.css">
+  <script type="text/javascript" src="https://gyrocode.github.io/jquery-datatables-alphabetSearch/1.2.2/js/dataTables.alphabetSearch.min.js"></script>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -44,7 +49,9 @@
      <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">   
     <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
-    <script  src="assets/js/myCode.js">
+    <script  src="assets/js/myCode.js"> </script>
+    <script src="addtours.js">
+
     </script>
 </head>
 
@@ -66,7 +73,7 @@
                                 <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><ion-icon name="cog"></ion-icon></span></a>
                                 <div role="menu" class="dropdown-menu message-dd animated zoomIn">
                                     <div class="hd-mg-tt">
-                                        <h2><a href="login-register.html"><ion-icon name="power"></ion-icon>Sign Out </a> </h2>
+                                        <h2><a href="login-register.php"><ion-icon name="power"></ion-icon>Sign Out </a> </h2>
                                         <h2><a href="#" id="edit-button"><ion-icon name="create"></ion-icon>Edit profile </a> </h2>
                                     </div>
                                     
@@ -487,36 +494,65 @@
                         <div class="basic-tb-hd">
                             <p>This table contains all details related to our tours,Can Add,Edit And Delete any one of tours.</p>
                         </div>
-                        <div class="table-responsive">
-                            <table id="data-table-basic" class="table table-striped">
-                                <thead class="thead-light">
-                                    <tr>
-                                        <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 65px;" aria-label="Name: activate to sort column ascending" rowspan="1" colspan="1">Name</th>
-                                        <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 60px;" aria-label="Name: activate to sort column ascending" rowspan="1" colspan="1">city</th>
-                                        <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 60px;" aria-label="Name: activate to sort column ascending" rowspan="1" colspan="1">Country</th>
-                                        <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 60px;" aria-label="Position: activate to sort column ascending" rowspan="1" colspan="1">Tour ID</th>
-                                        <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 60px;" aria-label="Office: activate to sort column ascending" rowspan="1" colspan="1">NumOf days</th>
-                                        <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 60px;" aria-label="Age: activate to sort column ascending" rowspan="1" colspan="1">Rate</th>
-                                        <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 60px;" aria-label="Salary: activate to sort column ascending" rowspan="1" colspan="1">Cost</th>
-                                        <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 60px;" aria-label="Salary: activate to sort column ascending" rowspan="1" colspan="1">Date</th>
-                                        
-                                        
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="name">Istanbul</td>
-                                        <td class="city">Istanbul</td>
-                                        <td class="Country">Turkey</td>
-                                        <td class="tourID">1562</td>
-                                        <td class="numOfday">4</td>
-                                        <td class="rate">4.7</td>
-                                        <td class="cost">$300</td>
-                                        <td class="date">5/5/2019</td>
-                                    </tr>                                  
-                                </tbody>
-                            </table>
-                        </div>
+                        <div class="text-center">
+                                <h1>PAYMENT PAGE</h1>
+                                </div>
+                                <hr>
+                                
+                                  <div class="container">
+                                    <div class="row clearfix">
+                                        <div class="col-md-12 column">
+                                            <table class="table table-bordered table-hover" id="tab_logic">
+                                                <thead>
+                                                    <tr >
+                                                        <th class="text-center">
+                                                            #
+                                                        </th>
+                                                        <th class="text-center">
+                                                            User ID
+                                                        </th>
+                                                        <th class="text-center">
+                                                            Name
+                                                        </th>
+                                                        <th class="text-center">
+                                                            NIC
+                                                        </th>
+                                                        <th class="text-center">
+                                                            Amount
+                                                        </th>
+                                                        <th class="text-center">
+                                                            Date
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr id='addr0'>
+                                                        <td>
+                                                        1
+                                                        </td>
+                                                        <td>
+                                                        <input type="text" name='uid'  placeholder='User ID' class="form-control"/>
+                                                        </td>
+                                                        <td>
+                                                        <input type="text" name='uname' placeholder='Name' class="form-control"/>
+                                                        </td>
+                                                        <td>
+                                                        <input type="text" name='nic' placeholder='NIC' class="form-control"/>
+                                                        </td>
+                                                        <td>
+                                                        <input type="text" name='amount' placeholder='Amount' class="form-control"/>
+                                                        </td>
+                                                        <td>
+                                                        <input type="date" name='dt' placeholder='Date' class="form-control"/>
+                                                        </td>
+                                                    </tr>
+                                                    <tr id='addr1'></tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <button id="add_row" class="btn btn-primary btn-lg pull-left" >SUBMIT</button>
+                             </div>
                     </div>
                 </div>
             </div>
@@ -617,7 +653,7 @@
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
                                 <div class="breadcomb-report">
                                    <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><ion-icon name="close"></ion-icon>Delete</button>
-                                    <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><ion-icon name="add-circle-outline"></ion-icon>Add</button>
+                                    <button id="add_row" onclick="addtour()" data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><ion-icon name="add-circle-outline"></ion-icon>Add</button>
                                     <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><ion-icon name="create"></ion-icon>Edit</button>
                                 </div>
                             </div>

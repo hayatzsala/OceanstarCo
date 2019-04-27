@@ -25,10 +25,10 @@
 				<!-- Nav -->
 				<nav id="menu">
 				  <ul class="links">
-					<li><a href="index.html">Home</a></li>
+					<li><a href="index.php">Home</a></li>
 					<li><a href="AboutUS.html">About Us</a></li>
-					<li><a href="packages.html">Packages</a></li>
-          <li><a href="login-register.html">Sign In</a></li>
+					<li><a href="packages.php">Packages</a></li>
+          <li><a href="login-register.php">Sign In</a></li>
 				  </ul>
 				</nav>
     <div class="container-fluid">
