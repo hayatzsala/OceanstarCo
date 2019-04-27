@@ -34,7 +34,7 @@ if($stmt->rowCount() > 0){
       //  $_SESSION['id'] = $user['id'];
      // if()
    // );
-   header("location: packages.html");
+   header("location: packages.php");
 }
 else{
     $user_arr=array(
