@@ -14,7 +14,7 @@ include 'config.php';
   <body>
     <!-- Header -->
     <header id="header">
-      <div class="logo"><a href="index.html">OcaenStar Co.</a></div>
+      <div class="logo"><a href="index.php">OcaenStar Co.</a></div>
       <a href="#menu"><span>Menu</span></a>
     </header>
 
