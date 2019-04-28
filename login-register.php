@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <?php 
-//session_start();
+session_start();
 ///if(isset($_SESSION['id'])){
    // die(header("location: 404.php"));
 //}
@@ -70,3 +70,4 @@
   
 </body>
 </html>
+

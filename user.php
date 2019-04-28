@@ -30,7 +30,7 @@ class User{
             return false;
         }
         // query to insert record
-         $query = "INSERT INTO users (`id`, `email`, `pass`, `Fname`, `Lname`, `birthdate`, `gender`, `phone-no`, `nationality`) VALUES (DEFAULT,'$this->username','$this->password',DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT)";
+         $query = "INSERT INTO users (`id`, `email`, `password`, `Fname`, `Lname`, `birthdate`, `gender`, `phone-no`, `nationality`) VALUES (DEFAULT,'$this->username','$this->password',DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT)";
 
         // prepare query
         $stmt = $this->conn->prepare($query);
@@ -55,11 +55,11 @@ class User{
     function login(){
         // select all query
         $query = "SELECT
-                   `id`, `email`, `pass`, `Fname`, `Lname`, `birthdate`, `gender`, `phone-no`, `nationality`
+                   `id`, `email`, `password`, `Fname`, `Lname`, `birthdate`, `gender`, `phone-no`, `nationality`
                 FROM
                     ". $this->table_name . " 
                 WHERE
-                    email='".$this->username."' AND pass='".$this->password."'";
+                    email='".$this->username."' AND password='".$this->password."'";
         // prepare query statement
         $stmt = $this->conn->prepare($query);
         // execute query

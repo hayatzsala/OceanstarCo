@@ -1,6 +1,10 @@
+
 <!DOCTYPE html>
 
+<?php
+session_start();
 
+?>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -11,13 +15,16 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css"
     />
-    <script type="text/javascript" src="assets/js/packagesData.js"> </script>
+    <script type="text/javascript" src="assets/js/packagesData.js">
+    
+     </script>
 
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
 
     <body class="subpage" onload="getPackages()">
+      
         <!-- Header -->
         <header id="header" class="alt">
           <div class="logo">
@@ -32,62 +39,33 @@
           <li><a href="index.php">Home</a></li>
           <li><a href="AboutUS.html">About Us</a></li>
           <li><a href="packages.php">Packages</a></li>
-          <li><a href="login-register.html">Sign In</a></li>
+          
+          <?php
+          if(isset($_SESSION['username'])){
+            echo "<li><a href='logout.php'>Logout</a></li>";
+          }
+          else{
+            echo "<li><a href='login-register.php'>Sign In</a></li>";
+          }
+
+        ?>  
           </ul>
         </nav>
-        <div id="content"></div>
+        
     <div class="container-fluid">
-    <br>
+    <br/>
     <h1 class="text-center mb-3">BOOK THE PACKAGE THAT MEETS YOUR WISHES !</h1>
-    <br>
+    <br/>
       <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner row w-100 mx-auto" id="hi">
-           <!-- <div class="carousel-item col-md-4 active">
-           <div class="card" >
-              <img
-                class="card-img-top img-fluid"
-                src="images/Bali.jpg"
-                alt="Card image cap"
-              />
-              <div class="card-body">
-                <h4 class="card-title">Bali batikh</h4>
-                <div class="city"><span class="data-field">City:</span></div>
-                <div class="country"><span class="data-field">Country:</span></div>
-                <div class="price"><span class="data-field">Price:</span></div>
-                <div class="date"><span class="data-field">Date:</span></div>
-                <div class="days"><span class="data-field">Number of days:</span></div>
-                <div class="rate"><span class="data-field">Rating:</span></div>
-                <br>
-               
-        <button>BOOK NOW</button>
-              </div>
-            </div>
-          </div> -->
-          
-          
-          
-        </div>
-        <a
-          class="carousel-control-prev"
-          href="#myCarousel"
-          role="button"
-          data-slide="prev"
-        >
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a
-          class="carousel-control-next"
-          href="#myCarousel"
-          role="button"
-          data-slide="next"
-        >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
       </div>
-    </div>
+      <div class="notification">
+        <p> </p>
+      </div>
+      <br/>
+      <br/>
+      <div id="myServices"></div>
     
+    </div>
   <footer id="footer">
       <div class="inner">
         <h2>Contact Me</h2>

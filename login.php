@@ -1,13 +1,13 @@
 <?php
-//session_start();
+session_start();
  //include 'index.php'; 
 // include database and object files
 include_once 'config.php';
 include_once 'user.php';
 
-if(isset($_SESSION['id'])){
-    die(header("location: 404.php"));
-}
+// if(isset($_SESSION['id'])){
+//     die(header("location: 404.php"));
+// }
 
 // get database connection
 $database = new Database();
@@ -31,7 +31,8 @@ if($stmt->rowCount() > 0){
         //"username" => $row['username']
        // loggedin= "yes";
       //  if($user->$username && password_verify($user->$password, $user['password'])){
-      //  $_SESSION['id'] = $user['id'];
+        $_SESSION['username'] = $user->username;
+        echo $_SESSION['username'];
      // if()
    // );
    header("location: packages.php");

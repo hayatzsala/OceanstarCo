@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-//session_start();
+session_start();
 include 'config.php';
 ?>
 
@@ -25,13 +25,16 @@ include 'config.php';
         <li><a href="AboutUS.html">About Us</a></li>
         <li><a href="Packages.php">Packages</a></li>
         
-
-  <li><a href="login-register.php">Sign In</a></li>
- 
- 
-
         <!--<li><a href="login-register.php">Sign In</a></li> -->
-        <li><a href="logout.php">Logout</a></li>
+        <?php
+          if(isset($_SESSION['username'])){
+            echo "<li><a href='logout.php'>Logout</a></li>";
+          }
+          else{
+            echo "<li><a href='login-register.php'>Sign In</a></li>";
+          }
+
+        ?>  
     
 
       </ul>
@@ -39,10 +42,10 @@ include 'config.php';
 
     <!-- Banner -->
     <!--
-			Note: To show a background image, set the "data-bg" attribute below
-			to the full filename of your image. This is used in each section to set
-			the background image.
-		-->
+      Note: To show a background image, set the "data-bg" attribute below
+      to the full filename of your image. This is used in each section to set
+      the background image.
+    -->
     <section id="banner" class="bg-img" data-bg="banner.jpg">
       <div class="inner">
         <header>
