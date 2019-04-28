@@ -7,8 +7,7 @@ $email    = "";
 $errors = array(); 
 
 // connect to the database
-$db = mysqli_connect("localhost", "root", "");
-mysqli_select_db($db,"oceanstars");
+
 
 // REGISTER USER
 if (isset($_POST['register'])) {
