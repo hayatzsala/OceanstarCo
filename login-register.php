@@ -18,6 +18,7 @@ session_start();
 <body>
   <div class="login-wrap">
   <div class="login-html">
+  
     <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
     <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
     <div class="login-form">
@@ -53,7 +54,7 @@ session_start();
         </div>
         <div class="group">
           <label for="pass" class="label">Confirm Password</label>
-          <input id="pass" type="password" class="input" data-type="password">
+          <input id="pass" type="password" name="pass" class="input" data-type="password">
         </div>
         <div class="group">
           <input type="submit" class="button" value="Sign Up">

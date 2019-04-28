@@ -24,7 +24,7 @@ include 'config.php';
         <li><a href="index.php">Home</a></li>
         <li><a href="AboutUS.html">About Us</a></li>
         <li><a href="Packages.php">Packages</a></li>
-<<<<<<< Updated upstream
+
         
         <!--<li><a href="login-register.php">Sign In</a></li> -->
         <?php
@@ -38,10 +38,6 @@ include 'config.php';
         ?>  
     
 
-=======
-        <li><a href="login-register.html">Sign In</a></li>
-        <li><a href="index.php?logout='1'">log out</a></li>
->>>>>>> Stashed changes
       </ul>
     </nav>
 

@@ -39,6 +39,7 @@ session_start();
           <li><a href="index.php">Home</a></li>
           <li><a href="AboutUS.html">About Us</a></li>
           <li><a href="packages.php">Packages</a></li>
+<<<<<<< HEAD
           
           <?php
           if(isset($_SESSION['username'])){
@@ -49,6 +50,9 @@ session_start();
           }
 
         ?>  
+=======
+          <li><a href="login-register.php">Sign In</a></li>
+>>>>>>> origin/master
           </ul>
         </nav>
         
