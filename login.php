@@ -1,25 +1,25 @@
 <?php
 session_start();
-<<<<<<< HEAD
-=======
+
+
 ?>
 
 <?php
->>>>>>> origin/master
+
  //include 'index.php'; 
 // include database and object files
 include_once 'config.php';
 include_once 'user.php';
 
-<<<<<<< HEAD
+
 // if(isset($_SESSION['id'])){
 //     die(header("location: 404.php"));
 // }
-=======
+
 //if(isset($_SESSION['id'])){
   //  die(header("location: 404.php"));
 //}
->>>>>>> origin/master
+
 
 // get database connection
 $database = new Database();

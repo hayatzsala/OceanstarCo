@@ -31,12 +31,12 @@ class User{
             return false;
         }
         // query to insert record
-<<<<<<< HEAD
+
          $query = "INSERT INTO users (`id`, `email`, `password`, `Fname`, `Lname`, `birthdate`, `gender`, `phone-no`, `nationality`) VALUES (DEFAULT,'$this->username','$this->password',DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT)";
-=======
+
         $this->password = md5($this->password);
         $query = "INSERT INTO users (`id`, `email`, `pass`, `Fname`, `Lname`, `birthdate`, `gender`, `phone-no`, `nationality`,`role`,`status`) VALUES (DEFAULT,'$this->username','$this->password',DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT)";
->>>>>>> origin/master
+
 
         // prepare query
         $stmt = $this->conn->prepare($query);
@@ -93,11 +93,11 @@ class User{
         
         
         $query = "SELECT
-<<<<<<< HEAD
+
                    `id`, `email`, `password`, `Fname`, `Lname`, `birthdate`, `gender`, `phone-no`, `nationality`
-=======
+
                    `id`, `email`, `pass`, `Fname`, `Lname`, `birthdate`, `gender`, `phone-no`, `nationality`, `role`
->>>>>>> origin/master
+
                 FROM
                     ". $this->table_name . " 
                 WHERE
