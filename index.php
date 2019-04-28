@@ -23,7 +23,7 @@ include 'config.php';
       <ul class="links">
         <li><a href="index.php">Home</a></li>
         <li><a href="AboutUS.html">About Us</a></li>
-        <li><a href="Packages.html">Packages</a></li>
+        <li><a href="Packages.php">Packages</a></li>
         
 
   <li><a href="login-register.php">Sign In</a></li>

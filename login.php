@@ -40,13 +40,13 @@ if($stmt->rowCount() > 0){
     //  "status" => true,
     //    "message" => "Successfully Login!",
     //    "id" => $row['id'],
-    //"username" => $row['username']
-    // loggedin= "yes";
-    //  if($user->$username && password_verify($user->$password, $user['password'])){
-    //  $_SESSION['id'] = $user['id'];
-    // if()
-    // );
-   
+        //"username" => $row['username']
+       // loggedin= "yes";
+      //  if($user->$username && password_verify($user->$password, $user['password'])){
+      //  $_SESSION['id'] = $user['id'];
+     // if()
+   // );
+   header("location: packages.php");
 }
 else{
     header("location: login-register.php");
