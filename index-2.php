@@ -5,11 +5,6 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>My Profile</title>
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.js"></script>
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.15/datatables.min.css">
-  <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.15/datatables.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="https://gyrocode.github.io/jquery-datatables-alphabetSearch/1.2.2/css/dataTables.alphabetSearch.css">
-  <script type="text/javascript" src="https://gyrocode.github.io/jquery-datatables-alphabetSearch/1.2.2/js/dataTables.alphabetSearch.min.js"></script>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -49,10 +44,24 @@
      <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">   
     <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
-    <script  src="assets/js/myCode.js"> </script>
-    <script src="addtours.js">
-
+    <script  src="assets/js/myCode.js">
     </script>
+    <script>
+        function edit(){
+            
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      myFunction(this);
+    }
+  };
+  xmlhttp.open("GET", "cd_catalog.xml", true);
+  xmlhttp.send();
+}
+        </script>
+
+        
+       
 </head>
 
 <body>
@@ -73,7 +82,7 @@
                                 <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><ion-icon name="cog"></ion-icon></span></a>
                                 <div role="menu" class="dropdown-menu message-dd animated zoomIn">
                                     <div class="hd-mg-tt">
-                                        <h2><a href="login-register.php"><ion-icon name="power"></ion-icon>Sign Out </a> </h2>
+                                        <h2><a href="login-register.html"><ion-icon name="power"></ion-icon>Sign Out </a> </h2>
                                         <h2><a href="#" id="edit-button"><ion-icon name="create"></ion-icon>Edit profile </a> </h2>
                                     </div>
                                     
@@ -112,7 +121,7 @@
                                 <li><a data-toggle="collapse" data-target="#" href="#">Tables</a>
                                     <ul id="demodepart" class="collapse dropdown-header-top">
                                         <li><a href="#Users">Customers</a></li>
-                                        <li><a href="#Admins">Admins</a></li>
+                                        
                                         <li><a href="#Tours">Tours</a></li>
                                         <li><a href="#Hotels">Hotels</a></li>
                                         <li><a href="#Cars">Cars</a></li>
@@ -151,8 +160,7 @@
                             <ul class="notika-main-menu-dropdown">
                                 <li id="Users-tapped"><a href="#Users">Customers</a>
                                 </li>
-                                <li id="Admins-tapped"><a href="#Admins">Admins</a>
-                                </li>
+                                
                                 <li id="Tours-tapped"><a href="#Tours">Tours</a>
                                 </li>
                                 <li id="Hotels-tapped"><a href="#Hotels">Hotels</a>
@@ -342,34 +350,37 @@
                             <table id="data-table-basic" class="table table-striped">
                                 <thead class="thead-light">
                                     <tr>
-                                        <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 150px;" aria-label="Name: activate to sort column ascending" rowspan="1" colspan="1">Name</th>
-                                        <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 292px;" aria-label="Position: activate to sort column ascending" rowspan="1" colspan="1">E-mail</th>
-                                        <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 140px;" aria-label="Office: activate to sort column ascending" rowspan="1" colspan="1">Phone number</th>
+                                    <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 292px;" aria-label="Position: activate to sort column ascending" rowspan="1" colspan="1">E-mail</th>
+                                        <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 150px;" aria-label="Name: activate to sort column ascending" rowspan="1" colspan="1">First Name</th>
+                                        <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 292px;" aria-label="Position: activate to sort column ascending" rowspan="1" colspan="1">Last Name</th>
+                                        <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 140px;" aria-label="Office: activate to sort column ascending" rowspan="1" colspan="1">Birthdate</th>
                                         <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 52px;" aria-label="Age: activate to sort column ascending" rowspan="1" colspan="1">Gender</th>
-                                        <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 116px;" aria-label="Salary: activate to sort column ascending" rowspan="1" colspan="1">Nationality</th>
-                                        <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 97px;" aria-label="Salary: activate to sort column ascending" rowspan="1" colspan="1">Birth Date</th>
-                                        
+                                        <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 116px;" aria-label="Salary: activate to sort column ascending" rowspan="1" colspan="1">phone Number</th>
+                                        <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 97px;" aria-label="Salary: activate to sort column ascending" rowspan="1" colspan="1">Nationality</th>
                                         
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td class="name">Tiger Nixon</td>
-                                        <td class="emailAdd">System Architect</td>
-                                        <td class="phone">Edinburgh</td>
-                                        <td class="natio">61</td>
-                                        <td class="birthdate">2011/04/25</td>
-                                        <td class="gender">$320,800</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="name">Alix Nixon</td>
-                                        <td class="emailAdd">System Architect</td>
-                                        <td class="phone">Edinburgh</td>
-                                        <td class="natio">61</td>
-                                        <td class="birthdate">2011/04/25</td>
-                                        <td class="gender">$320,800</td>
-                                    </tr>
                                    
+                                <?php 
+                                
+                                $conn=mysqli_connect("localhost","root","","oceanstar");
+                                if($conn->connect_error){
+                                    die("Connection Failed:".$conn->connect_error);
+                                }
+                                   $sql = "SELECT * FROM `users` " ;
+                                   $result = mysqli_query($conn, "SELECT * FROM `users`");
+                                   if(mysqli_num_rows($result) > 0){
+                                       while($row = $result->fetch_assoc()){
+                                           echo "<tr><td>". $row['email']."</td><td>".$row['Fname']."</td><td>".$row['Lname']."</td><td>".$row['birthdate']."</td><td>".$row['gender']."</td><td>".$row['phone-no']."</td><td>".$row['nationality']."</td></tr>";
+                                       }
+                                       echo "</table>";
+                                   }
+                                   else {
+                                       echo "0 result";
+                                   }
+                                   $conn ->close();
+                                   ?>
                                 </tbody>
                             </table>
                         </div>
@@ -379,84 +390,7 @@
         </div>
     </div>
 </div>
-    <div class="breadcomb-area" id="Admins" style="display: none;">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="breadcomb-list">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div class="breadcomb-wp">
-                                    <div class="breadcomb-icon">
-                                        <i class="notika-icon notika-windows"></i>
-                                    </div>
-                                    <div class="breadcomb-ctn">
-                                        <h2>Admins Table</h2>
-                                        <p>View all admins of the website.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
-                                <div class="breadcomb-report">
-                                    <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><ion-icon name="close"></ion-icon>Delete</button>
-                                    <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><ion-icon name="add-circle-outline"></ion-icon>Add</button>
-                                    <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><ion-icon name="create"></ion-icon>Edit</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-         <div class="data-table-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="data-table-list">
-                        <div class="basic-tb-hd">
-                            <p>This table shows all allowed to show the details of other admins in website.</p>
-                        </div>
-                        <div class="table-responsive">
-                            <table id="data-table-basic" class="table table-striped">
-                                <thead class="thead-light">
-                                    <tr>
-                                        <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 150px;" aria-label="Name: activate to sort column ascending" rowspan="1" colspan="1">Name</th>
-                                        <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 292px;" aria-label="Position: activate to sort column ascending" rowspan="1" colspan="1">E-mail</th>
-                                        <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 140px;" aria-label="Office: activate to sort column ascending" rowspan="1" colspan="1">Phone number</th>
-                                        <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 52px;" aria-label="Age: activate to sort column ascending" rowspan="1" colspan="1">Gender</th>
-                                        <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 116px;" aria-label="Salary: activate to sort column ascending" rowspan="1" colspan="1">Nationality</th>
-                                        <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 97px;" aria-label="Salary: activate to sort column ascending" rowspan="1" colspan="1">Birth Date</th>
-                                        
-                                        
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="name">Tiger Nixon</td>
-                                        <td class="emailAdd">System Architect</td>
-                                        <td class="phone">Edinburgh</td>
-                                        <td class="natio">61</td>
-                                        <td class="birthdate">2011/04/25</td>
-                                        <td class="gender">$320,800</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="name">Alix Nixon</td>
-                                        <td class="emailAdd">System Architect</td>
-                                        <td class="phone">Edinburgh</td>
-                                        <td class="natio">61</td>
-                                        <td class="birthdate">2011/04/25</td>
-                                        <td class="gender">$320,800</td>
-                                    </tr>
-                                   
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
+   
 <div class="breadcomb-area" id="Tours" style="display: none;">
         <div class="container">
             <div class="row">
@@ -494,65 +428,45 @@
                         <div class="basic-tb-hd">
                             <p>This table contains all details related to our tours,Can Add,Edit And Delete any one of tours.</p>
                         </div>
-                        <div class="text-center">
-                                <h1>PAYMENT PAGE</h1>
-                                </div>
-                                <hr>
+                        <div class="table-responsive">
+                            <table id="data-table-basic" class="table table-striped">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 65px;" aria-label="Name: activate to sort column ascending" rowspan="1" colspan="1">Name</th>
+                                        <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 60px;" aria-label="Name: activate to sort column ascending" rowspan="1" colspan="1">city</th>
+                                        <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 60px;" aria-label="Name: activate to sort column ascending" rowspan="1" colspan="1">Country</th>
+                        
+                                        <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 60px;" aria-label="Office: activate to sort column ascending" rowspan="1" colspan="1">NumOf days</th>
+                                        <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 60px;" aria-label="Age: activate to sort column ascending" rowspan="1" colspan="1">Rate</th>
+                                        <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 60px;" aria-label="Salary: activate to sort column ascending" rowspan="1" colspan="1">Cost</th>
+                                        <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 60px;" aria-label="Salary: activate to sort column ascending" rowspan="1" colspan="1">Date</th>
+                                        
+                                        
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <?php 
                                 
-                                  <div class="container">
-                                    <div class="row clearfix">
-                                        <div class="col-md-12 column">
-                                            <table class="table table-bordered table-hover" id="tab_logic">
-                                                <thead>
-                                                    <tr >
-                                                        <th class="text-center">
-                                                            #
-                                                        </th>
-                                                        <th class="text-center">
-                                                            User ID
-                                                        </th>
-                                                        <th class="text-center">
-                                                            Name
-                                                        </th>
-                                                        <th class="text-center">
-                                                            NIC
-                                                        </th>
-                                                        <th class="text-center">
-                                                            Amount
-                                                        </th>
-                                                        <th class="text-center">
-                                                            Date
-                                                        </th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr id='addr0'>
-                                                        <td>
-                                                        1
-                                                        </td>
-                                                        <td>
-                                                        <input type="text" name='uid'  placeholder='User ID' class="form-control"/>
-                                                        </td>
-                                                        <td>
-                                                        <input type="text" name='uname' placeholder='Name' class="form-control"/>
-                                                        </td>
-                                                        <td>
-                                                        <input type="text" name='nic' placeholder='NIC' class="form-control"/>
-                                                        </td>
-                                                        <td>
-                                                        <input type="text" name='amount' placeholder='Amount' class="form-control"/>
-                                                        </td>
-                                                        <td>
-                                                        <input type="date" name='dt' placeholder='Date' class="form-control"/>
-                                                        </td>
-                                                    </tr>
-                                                    <tr id='addr1'></tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                    <button id="add_row" class="btn btn-primary btn-lg pull-left" >SUBMIT</button>
-                             </div>
+                                $conn=mysqli_connect("localhost","root","","oceanstar");
+                                if($conn->connect_error){
+                                    die("Connection Failed:".$conn->connect_error);
+                                }
+                                   $sql = "SELECT * FROM `tours` " ;
+                                   $result = mysqli_query($conn, "SELECT * FROM `tours`");
+                                   if(mysqli_num_rows($result) > 0){
+                                       while($row = $result->fetch_assoc()){
+                                           echo "<tr><td>". $row['name']."</td><td>".$row['city']."</td><td>".$row['country']."</td><td>".$row['dayNo']."</td><td>".$row['rate']."</td><td>".$row['cost']."</td><td>".$row['tourDate']."</td></tr>";
+                                       }
+                                       echo "</table>";
+                                   }
+                                   else {
+                                       echo "0 result";
+                                   }
+                                   $conn ->close();
+                                   ?>                               
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -602,8 +516,7 @@
                                     <tr>
                                         <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 100px;" aria-label="Name: activate to sort column ascending" rowspan="1" colspan="1">Name</th>
                                         <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width:100px;" aria-label="Name: activate to sort column ascending" rowspan="1" colspan="1">Stars</th>
-                                        <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 100px;" aria-label="Name: activate to sort column ascending" rowspan="1" colspan="1">Rate</th>
-                                        <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 90px;" aria-label="Office: activate to sort column ascending" rowspan="1" colspan="1">No. Of rooms</th>
+        
                                         <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 90px;" aria-label="Age: activate to sort column ascending" rowspan="1" colspan="1">City</th>
                                         <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 65 px;" aria-label="Salary: activate to sort column ascending" rowspan="1" colspan="1">Country</th>
                                         <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 65 px;" aria-label="Salary: activate to sort column ascending" rowspan="1" colspan="1">Cost for 1day</th>
@@ -613,17 +526,25 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td class="name">Al Qauds</td>
-                                        <td class="Stars">5</td>
-                                        <td class="rate">4.4</td>
-                                        <td class="numOfroom">200</td>
-                                        <td class="City">Ramallah</td>
-                                        <td class="Country">Palestine</td>
-                                        <td class="cost">87$</td>
-                                        
-                                        
-                                    </tr>                                  
+                                <?php 
+                                
+                                $conn=mysqli_connect("localhost","root","","oceanstar");
+                                if($conn->connect_error){
+                                    die("Connection Failed:".$conn->connect_error);
+                                }
+                                   $sql = "SELECT * FROM `hotels` " ;
+                                   $result = mysqli_query($conn, "SELECT * FROM `hotels`");
+                                   if(mysqli_num_rows($result) > 0){
+                                       while($row = $result->fetch_assoc()){
+                                           echo "<tr><td>". $row['name']."</td><td>".$row['stars']."</td><td>".$row['city']."</td><td>".$row['country']."</td><td>".$row['costPerDay']."</td></tr>";
+                                       }
+                                       echo "</table>";
+                                   }
+                                   else {
+                                       echo "0 result";
+                                   }
+                                   $conn ->close();
+                                   ?>                                     
                                 </tbody>
                             </table>
                         </div>
@@ -653,7 +574,7 @@
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
                                 <div class="breadcomb-report">
                                    <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><ion-icon name="close"></ion-icon>Delete</button>
-                                    <button id="add_row" onclick="addtour()" data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><ion-icon name="add-circle-outline"></ion-icon>Add</button>
+                                    <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><ion-icon name="add-circle-outline"></ion-icon>Add</button>
                                     <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><ion-icon name="create"></ion-icon>Edit</button>
                                 </div>
                             </div>
@@ -680,7 +601,6 @@
                                         <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 150px;" aria-label="Name: activate to sort column ascending" rowspan="1" colspan="1">To</th>
                                         <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 150px;" aria-label="Office: activate to sort column ascending" rowspan="1" colspan="1">Time of dep.</th>
                                         <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 150px;" aria-label="Age: activate to sort column ascending" rowspan="1" colspan="1">Date</th>
-                                        <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 100 px;" aria-label="Salary: activate to sort column ascending" rowspan="1" colspan="1">Rate</th>
                                         <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 100 px;" aria-label="Salary: activate to sort column ascending" rowspan="1" colspan="1">cost</th>
                                         
                                         
@@ -688,15 +608,25 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td class="airline">Turkey airline</td>
-                                        <td class="From">Turkey</td>
-                                        <td class="From">Jordan</td>
-                                        <td class="time">10:00</td>
-                                        <td class="date">5/5/2019</td>
-                                        <td class="rate">4.6</td>
-                                        <td class="cost">60$</td>
-                                    </tr>                                  
+                                <?php 
+                                
+                                $conn=mysqli_connect("localhost","root","","oceanstar");
+                                if($conn->connect_error){
+                                    die("Connection Failed:".$conn->connect_error);
+                                }
+                                   $sql = "SELECT * FROM `flights` " ;
+                                   $result = mysqli_query($conn, "SELECT * FROM `flights`");
+                                   if(mysqli_num_rows($result) > 0){
+                                       while($row = $result->fetch_assoc()){
+                                           echo "<tr><td>". $row['AirlineName']."</td><td>".$row['ContFrom']."</td><td>".$row['ContTo']."</td><td>".$row['Time']."</td><td>".$row['Date']."</td><td>".$row['cost']."</td></tr>";
+                                       }
+                                       echo "</table>";
+                                   }
+                                   else {
+                                       echo "0 result";
+                                   }
+                                   $conn ->close();
+                                   ?>                                
                                 </tbody>
                             </table>
                         </div>
@@ -748,8 +678,6 @@
                             <table id="data-table-basic" class="table table-striped">
                                 <thead class="thead-light">
                                     <tr>
-                                        <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 156px;" aria-label="Name: activate to sort column ascending" rowspan="1" colspan="1">Car ID</th>
-                                        
                                         <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 150px;" aria-label="Name: activate to sort column ascending" rowspan="1" colspan="1">Model Name</th>
                                         <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 150px;" aria-label="Name: activate to sort column ascending" rowspan="1" colspan="1">Model year</th>
                                         <th tabindex="0" class="sorting" aria-controls="data-table-basic" style="width: 150px;" aria-label="Office: activate to sort column ascending" rowspan="1" colspan="1">Price/day</th>
@@ -760,13 +688,25 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td class="carID">4556</td>
-                                        <td class="mName">KIA</td>
-                                        <td class="mYear">2019</td>
-                                        <td class="price">100$</td>
-                                        <td class="capacity">5</td>
-                                    </tr>                                  
+                                <?php 
+                                
+                                $conn=mysqli_connect("localhost","root","","oceanstar");
+                                if($conn->connect_error){
+                                    die("Connection Failed:".$conn->connect_error);
+                                }
+                                   $sql = "SELECT * FROM `cars` " ;
+                                   $result = mysqli_query($conn, "SELECT * FROM `cars`");
+                                   if(mysqli_num_rows($result) > 0){
+                                       while($row = $result->fetch_assoc()){
+                                           echo "<tr><td>". $row['ModelName']."</td><td>".$row['ModelYear']."</td><td>".$row['PricePerDay']."</td><td>".$row['Capacity']."</td></tr>";
+                                       }
+                                       echo "</table>";
+                                   }
+                                   else {
+                                       echo "0 result";
+                                   }
+                                   $conn ->close();
+                                   ?>                               
                                 </tbody>
                             </table>
                         </div>
@@ -811,36 +751,27 @@
   <div class="form-row">
     <div class="col-md-4 mb-3">
       <label for="validationDefault01">First name</label>
-      <input type="text" class="form-control" id="validationDefault01" placeholder="First name" value="" required>
+      <input type="text" name="fname" class="form-control" id="fname" placeholder="First name" value="" required>
     </div>
     <div class="col-md-4 mb-3">
       <label for="validationDefault02">Last name</label>
-      <input type="text" class="form-control" id="validationDefault02" placeholder="Last name" value="" required>
-    </div>
-    <div class="col-md-4 mb-3">
-      <label for="validationDefaultUsername">UserID</label>
-      <div class="input-group">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="inputGroupPrepend2">@</span>
-        </div>
-        <input type="text" class="form-control" id="validationDefaultUsername" placeholder="Username" aria-describedby="inputGroupPrepend2" required>
-      </div>
+      <input type="text" class="form-control" name="lname" placeholder="Last name" value="" required>
     </div>
   </div>
   <div class="form-row">
     <div class="col-md-4 mb-3">
     <label for="exampleInputEmail1">Email</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="col-form-label">
+      <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="col-form-label">
     </div>
     <div class="col-md-4 mb-3">
       <label for="validationDefault04">Phone number</label>
-      <input type="text" class="form-control" id="validationDefault04" placeholder=" _ _ _ - _ _ _ - _ _ _ _" required>
+      <input type="text" class="form-control" name="no" placeholder=" _ _ _ - _ _ _ - _ _ _ _" required>
     </div>
   </div>
   <div class="form-row">
     <div class="col-md-4 mb-3">
         <label for="validationDefault04">Gender</label>
-        <select class="custom-select custom-select-lg mb-3">
+        <select  id="gender" class="custom-select custom-select-lg mb-3">
             <option selected></option>
              <option value="1">Male</option>
              <option value="2">Female</option>
@@ -849,8 +780,8 @@
     </div>
 
     <div class="col-md-5 mb-3">
-        <label for="validationDefault01" >Birtdate</label>
-        <input type="Date" id="birthdate" class="" placeholder="">
+        <label for="validationDefault01" >Birthdate</label>
+        <input type="Date" name="birthdate" class="" placeholder="">
         
     </div>
      
@@ -867,7 +798,7 @@
     </div>
   </div>
   <div class="form-buttons" >
-  <button class="btn btn-primary" type="submit" id="Save">Save Changes</button>
+  <button class="btn btn-primary" type="submit" id="Save" onclick="edit()">Save Changes</button>
   <button class="btn btn-primary" type="button" id="Reset">Reset password</button>
   </div>
 </form>
@@ -883,6 +814,9 @@
 
 
     </div>
+    
+   
+        
      <!-- end tables ares-->
     <!-- Start Footer area-->
     <div class="footer-copyright-area">

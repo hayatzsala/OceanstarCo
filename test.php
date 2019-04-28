@@ -2,7 +2,7 @@
 
 header("Content-Type: application/json; charset=UTF-8");
 // Create connection
-$conn = new mysqli("localhost","root", "","oceanstars");
+$conn = new mysqli("localhost","root", "","oceanstar");
 
 // Check connection
 if ($conn->connect_error) {
@@ -26,8 +26,8 @@ if (mysqli_num_rows($result) > 0) {
     	."<img class='card-img-top img-fluid' src=".$row["image"]." alt='Card image cap' />" 
     	. '<div class="card-body">'
     	.'<h4 class="card-title">'.$row["name"].'</h4>'
-    	.'<div class="city"><span class="data-field">City:'.$row["City"].'</span></div>'
-    	.'<div class="country"><span class="data-field">Country:'.$row["Country"].'</span></div>'
+    	.'<div class="city"><span class="data-field">City:'.$row["city"].'</span></div>'
+    	.'<div class="country"><span class="data-field">Country:'.$row["country"].'</span></div>'
     	.'<div class="price"><span class="data-field">Price:'.$row["cost"].'</span></div>'
     	.'<div class="date"><span class="data-field">Date:'.$row["tourDate"].'</span></div>'
     	.'<div class="days"><span class="data-field">Number of days:'.$row["dayNo"].'</span></div>'
@@ -43,8 +43,8 @@ if (mysqli_num_rows($result) > 0) {
     	."<img class='card-img-top img-fluid' src=".$row["image"]." alt='Card image cap' />" 
     	. '<div class="card-body">'
     	.'<h4 class="card-title">'.$row["name"].'</h4>'
-    	.'<div class="city"><span class="data-field">City:'.$row["City"].'</span></div>'
-    	.'<div class="country"><span class="data-field">Country:'.$row["Country"].'</span></div>'
+    	.'<div class="city"><span class="data-field">City:'.$row["city"].'</span></div>'
+    	.'<div class="country"><span class="data-field">Country:'.$row["country"].'</span></div>'
     	.'<div class="price"><span class="data-field">Price:'.$row["cost"].'</span></div>'
     	.'<div class="date"><span class="data-field">Date:'.$row["tourDate"].'</span></div>'
     	.'<div class="days"><span class="data-field">Number of days:'.$row["dayNo"].'</span></div>'
