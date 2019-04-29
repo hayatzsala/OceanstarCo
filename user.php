@@ -32,7 +32,6 @@ class User{
         }
         // query to insert record
 
-         $query = "INSERT INTO users (`id`, `email`, `password`, `Fname`, `Lname`, `birthdate`, `gender`, `phone-no`, `nationality`) VALUES (DEFAULT,'$this->username','$this->password',DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT)";
 
         $this->password = md5($this->password);
         $query = "INSERT INTO users (`id`, `email`, `pass`, `Fname`, `Lname`, `birthdate`, `gender`, `phone-no`, `nationality`,`role`,`status`) VALUES (DEFAULT,'$this->username','$this->password',DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT)";
@@ -52,22 +51,22 @@ class User{
             $this->id = $this->conn->lastInsertId();
             if(!empty($this->id)){
             $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"."activate.php?id=" . $this->id;
-			$toEmail = $_POST['username'];
-			$subject = "User Registration Activation Email";
-			$content = "Click this link to activate your account. <a href='" . $actual_link . "'>" . $actual_link . "</a>";
-			$mailHeaders = "From: Admin\r\n";
-			if(mail($toEmail, $subject, $content, $mailHeaders)) {
-				$message = "You have registered and the activation mail is sent to your email. Click the activation link to activate you account.";	
-				$type = "success";
-			}
-			unset($_POST);
+            $toEmail = $_POST['username'];
+            $subject = "User Registration Activation Email";
+            $content = "Click this link to activate your account. <a href='" . $actual_link . "'>" . $actual_link . "</a>";
+            $mailHeaders = "From: Admin\r\n";
+            if(mail($toEmail, $subject, $content, $mailHeaders)) {
+                $message = "You have registered and the activation mail is sent to your email. Click the activation link to activate you account."; 
+                $type = "success";
+            }
+            unset($_POST);
             } //empty
             else {
-                $message = "Problem in registration. Try Again!";	
+                $message = "Problem in registration. Try Again!";   
             } //if else empty
         } //execute
             else {
-                $message = "User Email is already in use.";	
+                $message = "User Email is already in use."; 
                 $type = "error";
                 return true;
             }  
@@ -94,9 +93,8 @@ class User{
         
         $query = "SELECT
 
-                   `id`, `email`, `password`, `Fname`, `Lname`, `birthdate`, `gender`, `phone-no`, `nationality`
 
-                   `id`, `email`, `pass`, `Fname`, `Lname`, `birthdate`, `gender`, `phone-no`, `nationality`, `role`
+                   `id`, `email`, `password`, `Fname`, `Lname`, `birthdate`, `gender`, `phone-no`, `nationality`, `role`
 
                 FROM
                     ". $this->table_name . " 

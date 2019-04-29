@@ -46,7 +46,7 @@ if (mysqli_num_rows($result) > 0) {
       .'<div class="days"><span class="data-field">Number of rooms:'.$row["roomNo"].'</span></div>'
       .'<div class="rate"><span class="data-field">Rating:'.$row["rate"].'</span></div>'
       .'<br>'
-      .'<button class="myHotel" >BOOK NOW</button>'
+      .'<button class="myHotel" id="'.$row["name"].'" onclick="hotelCard(this.id)" >BOOK NOW</button>'
       .'</div>'
       .'</div>'
       .'</div>'
@@ -112,7 +112,7 @@ if (mysqli_num_rows($result2) > 0) {
       .'<div class="days"><span class="data-field">Cost:'.$row2["cost"].'</span></div>'
       .'<div class="rate"><span class="data-field">Rating:'.$row2["rate"].'</span></div>'
       .'<br>'
-      .'<button class="myFlight" >BOOK NOW</button>'
+      .'<button class="myFlight" id="'.$row2["AirlineName"].'" onclick="flightCard(this.id)" >BOOK NOW</button>'
       .'</div>'
       .'</div>'
       .'</div>'
@@ -171,7 +171,7 @@ if (mysqli_num_rows($result3) > 0) {
       .'<div class="price"><span class="data-field">Capacity: '.$row3["Capacity"].'</span></div>'
       
       .'<br>'
-      .'<button class="myTour" >BOOK NOW</button>'
+      .'<button class="myTour" id="'.$row3["CarID"].'" onclick="carCard(this.id)" >BOOK NOW</button>'
       .'</div>'
       .'</div>'
       .'</div>';
@@ -189,7 +189,7 @@ if (mysqli_num_rows($result3) > 0) {
       .'<div class="price"><span class="data-field">Capacity: '.$row3["Capacity"].'</span></div>'
       
       .'<br>'
-      .'<button class="myCar" >BOOK NOW</button>'
+      .'<button class="myCar" id="'.$row3["CarID"].'" onclick="carCard(this.id)">BOOK NOW</button>'
       .'</div>'
       .'</div>'
       .'</div>'
@@ -218,7 +218,10 @@ if (mysqli_num_rows($result3) > 0) {
           <span class="sr-only">Next</span>
         </a>
 
-        </div>';
+        </div>'
+        .'<br>'
+        .'<br>'
+        .'<div style="backgroundColor=rgb(163,255,247)"><button onclick="confirm()" > Confirm my Booking</button></div>';
       }
 } else {
     echo "<h3>Please, <a href='login-register.php'>Sign in</a> first";

@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-
 ?>
 
 <?php
@@ -38,10 +37,17 @@ if($stmt->rowCount() > 0){
     //$_SESSION['is_login'] = true;
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
     if ($user->username == 'ghadeer.9816.ps@gmail.com'){
-        header("location :index-2.html");
+        header("location :index-2.php");
     }
-    else{///if($user->username)
-    header("location: packages.php"); 
+    else{
+
+      if($user->username==$row["email"]){
+
+        $_SESSION["clientName"]=$row["Fname"].$row["Lname"];
+        $_SESSION["id"]=$row["id"];
+      }
+    header("location: client1.php"); 
+   // $_SESSION['clientName']=$
     echo "WELCOME" ;
     }
     // create array
@@ -56,9 +62,10 @@ if($stmt->rowCount() > 0){
         echo $_SESSION['username'];
      // if()
    // );
-   header("location: packages.php");
+  // header("location: packages.php");
 }
 else{
+
     header("location: login-register.php");
   ///  $user_arr=array(
     //    "status" => false,

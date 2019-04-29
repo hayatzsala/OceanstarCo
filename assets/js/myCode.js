@@ -129,3 +129,74 @@
             $('#data-section').css("display","block");
          })
      });
+
+  // function deleteBook(tourId){
+  //   <?php 
+  //       $conn=mysqli_connect("localhost","root","","oceanstars");
+  //                if($conn->connect_error){
+  //              die("Connection Failed:".$conn->connect_error);
+  //                    }
+                                   
+  //        $result = mysqli_query($conn, "DELETE FROM `booked` WHERE `tourID`='".tourID."'");
+
+         
+
+  //   ?>
+  // }
+
+  function resetpass(){
+    var old=document.getElementById('oldpassword').value;
+    var newp=document.getElementById('password').value;
+    var newp2=document.getElementById('password2').value;
+    var email=document.getElementById('email'),value;
+
+    if(newp==newp2){
+            var obj ={"oldPassword":old,"newPassword":newp,"email":email};
+            window.alert(old);
+            var db_param=JSON.stringify(obj);
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+      //var myObj=JSON.parse(this.responseText);
+      //window.alert(myObj[0].Lname);
+       // document.getElementById('myCarousel').innerHTML = this.responseText;
+    window.alert(this.responseText);
+             } 
+             };
+            xhttp.open("GET", "editInfo.php?x="+db_param, true);
+            xhttp.send();
+
+    }
+
+
+
+
+}
+
+function updateinfo(){
+    var Fname=document.getElementById('Fname').value;
+    var Lname=document.getElementById('Lname').value;
+    var birthdate=document.getElementById('birthdate').value;
+    var phone=document.getElementById('phone-no').value;
+    var email=document.getElementById("email").value;
+  
+            var obj ={"Fname":Fname,"Lname":Lname,"birthdate":birthdate,"phone":phone,"email":email};
+            //window.alert(old);
+            var db_param=JSON.stringify(obj);
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+      //var myObj=JSON.parse(this.responseText);
+      //window.alert(myObj[0].Lname);
+       // document.getElementById('myCarousel').innerHTML = this.responseText;
+    window.alert(this.responseText);
+             } 
+             };
+            xhttp.open("GET", "editInfo.php?y="+db_param, true);
+            xhttp.send();
+
+    }
+
+
+
+
