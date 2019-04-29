@@ -46,6 +46,11 @@
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
     <script  src="assets/js/myCode.js">
     </script>
+    <style>
+    .collapse.in {        
+      display: block;       
+}
+        </style>
     <script>
         function edit(){
             
@@ -328,9 +333,39 @@
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
                                 <div class="breadcomb-report">
-                                    <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><ion-icon name="close"></ion-icon>Delete</button>
-                                    <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><ion-icon name="add-circle-outline"></ion-icon>Add</button>
-                                    <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><ion-icon name="create"></ion-icon>Edit</button>
+                                    
+                                    <a  data-placement="left" title="Download Report" class="btn"  data-target="#multiCollapseExample1" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><ion-icon name="close"></ion-icon>Delete</a>
+                                   
+ 
+    
+                                  
+  
+    <div class="collapse multi-collapse" id="multiCollapseExample1">
+      <form action="deleteQ.php" method="post">
+    <input type="text" name="idd" id="idd" class="form-control" placeholder="Enter the id of the tour that u want to delete">
+    <button type="submit" class="btn btn-primary">Delete</button>
+</form>
+   
+  </div>
+  
+  <a  data-placement="left" title="Download Report" class="btn"  data-target="#multiCollapseExample8" data-toggle="collapse" href="#multiCollapseExample8" role="button" aria-expanded="false" aria-controls="multiCollapseExample8"><ion-icon name="close"></ion-icon>ADD</a>
+  <div class="collapse multi-collapse" id="multiCollapseExample8">
+      <form action="AddCus.php" method="post">
+    <input type="text" name="email" id="idcus" class="form-control" placeholder="email">
+    <input type="text" name="first" id="idcus" class="form-control" placeholder="first name">
+    <input type="text" name="last" id="idcus" class="form-control" placeholder="last name">
+    <button type="submit" class="btn btn-primary">Add</button>
+</form>
+   
+  </div>
+  <a  data-placement="left" title="Download Report" class="btn"  data-target="#multiCollapseExample9" data-toggle="collapse" href="#multiCollapseExample9" role="button" aria-expanded="false" aria-controls="multiCollapseExample9"><ion-icon name="close"></ion-icon>Edit</a>
+  <div class="collapse multi-collapse" id="multiCollapseExample9">
+      <form action="editCus.php" method="post">
+    <input type="text" name="idcust" id="idcust" class="form-control" placeholder="Enter the id of the tour that u want to delete">
+    <button type="submit" class="btn btn-primary">Edit</button>
+</form>
+   
+  </div>
                                 </div>
                             </div>
                         </div>
@@ -409,12 +444,46 @@
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
-                                <div class="breadcomb-report">
-                                   <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><ion-icon name="close"></ion-icon>Delete</button>
-                                    <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><ion-icon name="add-circle-outline"></ion-icon>Add</button>
-                                    <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><ion-icon name="create"></ion-icon>Edit</button>
+                                    <div class="breadcomb-report">
+                                        
+                                        <a  data-placement="left" title="Download Report" class="btn"  data-target="#multiCollapseExample2" data-toggle="collapse" href="#multiCollapseExample2" role="button" aria-expanded="false" aria-controls="multiCollapseExample2"><ion-icon name="close"></ion-icon>Delete</a>
+                                       
+     
+        
+                                      
+      
+        <div class="collapse multi-collapse" id="multiCollapseExample2">
+          <form action="deleteTour.php" method="post">
+        <input type="text" name="idtour" id="idtour" class="form-control" placeholder="tour name">
+        <button type="submit" class="btn btn-primary">Delete</button>
+    </form>
+       
+      </div>
+      
+      <a  data-placement="left" title="Download Report" class="btn"  data-target="#multiCollapseExample10" data-toggle="collapse" href="#multiCollapseExample10" role="button" aria-expanded="false" aria-controls="multiCollapseExample10"><ion-icon name="close"></ion-icon>ADD</a>
+      <div class="collapse multi-collapse" id="multiCollapseExample10">
+          <form action="AddTour.php" method="post">
+          <input type="text" name="name" id="idd" class="form-control" placeholder="place">
+    <input type="text" name="cost" id="idd" class="form-control" placeholder="cost">
+    <input type="text" name="rate" id="idd" class="form-control" placeholder="rate">
+    <input type="date" name="date" id="idd" class="form-control" placeholder="date">
+    <input type="text" name="dayno" id="idd" class="form-control" placeholder="Number of days">
+    <input type="text" name="city" id="idd" class="form-control" placeholder="city">
+    <input type="text" name="country" id="idd" class="form-control" placeholder="country">
+        <button type="submit" class="btn btn-primary">Add</button>
+    </form>
+       
+      </div>
+      <a  data-placement="left" title="Download Report" class="btn"  data-target="#multiCollapseExample11" data-toggle="collapse" href="#multiCollapseExample11" role="button" aria-expanded="false" aria-controls="multiCollapseExample11"><ion-icon name="close"></ion-icon>Edit</a>
+      <div class="collapse multi-collapse" id="multiCollapseExample11">
+          <form action="EditTour.php" method="post">
+        <input type="text" name="idtou" id="idtou" class="form-control" placeholder="Enter the id of the tour that u want to delete">
+        <button type="submit" class="btn btn-primary">Edit</button>
+    </form>
+       
+      </div>
+                                    </div>
                                 </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -486,17 +555,50 @@
                                     </div>
                                     <div class="breadcomb-ctn">
                                         <h2>Hotels Table</h2>
-                                        <p>View all avilable tours.</p>
+                                        <p>View all avilable hotels.</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
-                                <div class="breadcomb-report">
-                                    <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><ion-icon name="close"></ion-icon>Delete</button>
-                                    <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><ion-icon name="add-circle-outline"></ion-icon>Add</button>
-                                    <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><ion-icon name="create"></ion-icon>Edit</button>
+                                    <div class="breadcomb-report">
+                                        
+                                        <a  data-placement="left" title="Download Report" class="btn"  data-target="#multiCollapseExample3" data-toggle="collapse" href="#multiCollapseExample3" role="button" aria-expanded="false" aria-controls="multiCollapseExample3"><ion-icon name="close"></ion-icon>Delete</a>
+                                       
+     
+        
+                                      
+      
+        <div class="collapse multi-collapse" id="multiCollapseExample3">
+          <form action="deleteHotel.php" method="post">
+        <input type="text" name="idhotel" id="idhotel" class="form-control" placeholder="Enter the id of the tour that u want to delete">
+        <button type="submit" class="btn btn-primary">Delete</button>
+    </form>
+       
+      </div>
+      
+      <a  data-placement="left" title="Download Report" class="btn"  data-target="#multiCollapseExample12" data-toggle="collapse" href="#multiCollapseExample12" role="button" aria-expanded="false" aria-controls="multiCollapseExample12"><ion-icon name="close"></ion-icon>ADD</a>
+      <div class="collapse multi-collapse" id="multiCollapseExample12">
+          <form action="AddHotel.php" method="post">
+        <input type="text" name="name" id="name" class="form-control" placeholder="name">
+        <input type="text" name="stars" id="stars" class="form-control" placeholder="stars">
+        <input type="text" name="city" id="city" class="form-control" placeholder="city">
+        <input type="text" name="country" id="country" class="form-control" placeholder="country">
+        <input type="text" name="cbd" id="cbd" class="form-control" placeholder="cost per day">
+        <button type="submit" class="btn btn-primary">Add</button>
+    </form>
+       
+      </div>
+
+      <a  data-placement="left" title="Download Report" class="btn"  data-target="#multiCollapseExample13" data-toggle="collapse" href="#multiCollapseExample13" role="button" aria-expanded="false" aria-controls="multiCollapseExample13"><ion-icon name="close"></ion-icon>Edit</a>
+      <div class="collapse multi-collapse" id="multiCollapseExample13">
+          <form action="EditHotel.php" method="post">
+        <input type="text" name="idhot" id="idhot" class="form-control" placeholder="Enter the id of the tour that u want to delete">
+        <button type="submit" class="btn btn-primary">Edit</button>
+    </form>
+       
+      </div>
+                                    </div>
                                 </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -572,12 +674,46 @@
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
-                                <div class="breadcomb-report">
-                                   <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><ion-icon name="close"></ion-icon>Delete</button>
-                                    <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><ion-icon name="add-circle-outline"></ion-icon>Add</button>
-                                    <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><ion-icon name="create"></ion-icon>Edit</button>
+                                    <div class="breadcomb-report">
+                                        
+                                        <a  data-placement="left" title="Download Report" class="btn"  data-target="#multiCollapseExample4" data-toggle="collapse" href="#multiCollapseExample4" role="button" aria-expanded="false" aria-controls="multiCollapseExample4"><ion-icon name="close"></ion-icon>Delete</a>
+                                       
+     
+        
+                                      
+      
+        <div class="collapse multi-collapse" id="multiCollapseExample4">
+          <form action="deleteFlight.php" method="post">
+        <input type="text" name="idf" id="idf" class="form-control" placeholder="Enter the id of the tour that u want to delete">
+        <button type="submit" class="btn btn-primary">Delete</button>
+    </form>
+       
+      </div>
+      
+      <a  data-placement="left" title="Download Report" class="btn"  data-target="#multiCollapseExample14" data-toggle="collapse" href="#multiCollapseExample14" role="button" aria-expanded="false" aria-controls="multiCollapseExample14"><ion-icon name="close"></ion-icon>ADD</a>
+      <div class="collapse multi-collapse" id="multiCollapseExample14">
+          <form action="AddFlight.php" method="post">
+        <input type="text" name="name" id="idfli" class="form-control" placeholder="airline name">
+        <input type="text" name="from" id="idfli" class="form-control" placeholder="from">
+        <input type="text" name="to" id="idfli" class="form-control" placeholder="to">
+        <input type="date" name="date" id="idfli" class="form-control" placeholder="date">
+        <input type="time" name="time" id="idfli" class="form-control" placeholder="time">
+        <input type="text" name="cost" id="idfli" class="form-control" placeholder="cost">
+
+        <button type="submit" class="btn btn-primary">Add</button>
+    </form>
+       
+      </div>
+      <a  data-placement="left" title="Download Report" class="btn"  data-target="#multiCollapseExample15" data-toggle="collapse" href="#multiCollapseExample15" role="button" aria-expanded="false" aria-controls="multiCollapseExample15"><ion-icon name="close"></ion-icon>Edit</a>
+      <div class="collapse multi-collapse" id="multiCollapseExample15">
+          <form action="EditFlight.php" method="post">
+        <input type="text" name="idfligh" id="idfligh" class="form-control" placeholder="Enter the id of the tour that u want to delete">
+        <button type="submit" class="btn btn-primary">Edit</button>
+    </form>
+       
+      </div>
+                                    </div>
                                 </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -655,12 +791,46 @@
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
-                                <div class="breadcomb-report">
-                                    <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><ion-icon name="close"></ion-icon>Delete</button>
-                                    <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><ion-icon name="add-circle-outline"></ion-icon>Add</button>
-                                    <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><ion-icon name="create"></ion-icon>Edit</button>
+                                    <div class="breadcomb-report">
+                                        
+                                        <a  data-placement="left" title="Download Report" class="btn"  data-target="#multiCollapseExample5" data-toggle="collapse" href="#multiCollapseExample5" role="button" aria-expanded="false" aria-controls="multiCollapseExample5"><ion-icon name="close"></ion-icon>Delete</a>
+                                       
+     
+        
+                                      
+      
+        <div class="collapse multi-collapse" id="multiCollapseExample5">
+          <form action="deleteCar.php" method="post">
+        <input type="text" name="idc" id="idc" class="form-control" placeholder="Enter the id of the tour that u want to delete">
+        <button type="submit" class="btn btn-primary">Delete</button>
+    </form>
+       
+      </div>
+      
+      <a  data-placement="left" title="Download Report" class="btn"  data-target="#multiCollapseExample6" data-toggle="collapse" href="#multiCollapseExample6" role="button" aria-expanded="false" aria-controls="multiCollapseExample6"><ion-icon name="close"></ion-icon>ADD</a>
+      <div class="collapse multi-collapse" id="multiCollapseExample6">
+          <form action="AddCar.php" method="post">
+        <input type="text" name="name" id="name" class="form-control" placeholder="car name">
+        <input type="text" name="year" id="year" class="form-control" placeholder="car year model">
+        <input type="text" name="ppd" id="ppd" class="form-control" placeholder="price per day">
+        <input type="text" name="cap" id="cap" class="form-control" placeholder="capacity">
+        
+        <button type="submit" class="btn btn-primary">Add</button>
+    </form>
+       
+      </div>
+      <a  data-placement="left" title="Download Report" class="btn"  data-target="#multiCollapseExample7" data-toggle="collapse" href="#multiCollapseExample7" role="button" aria-expanded="false" aria-controls="multiCollapseExample7"><ion-icon name="close"></ion-icon>Edit</a>
+      <div class="collapse multi-collapse" id="multiCollapseExample7">
+          <form action="EditCar.php" method="post">
+        <input type="text" name="idcar" id="idcar" class="form-control" placeholder="Enter the id of the tour that u want to delete">
+        <button type="submit" class="btn btn-primary">Edit</button>
+    </form>
+       
+      </div>
+
+
+                                    </div>
                                 </div>
-                            </div>
                         </div>
                     </div>
                 </div>
