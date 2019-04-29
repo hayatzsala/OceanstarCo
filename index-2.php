@@ -87,7 +87,7 @@
                                 <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><ion-icon name="cog"></ion-icon></span></a>
                                 <div role="menu" class="dropdown-menu message-dd animated zoomIn">
                                     <div class="hd-mg-tt">
-                                        <h2><a href="login-register.html"><ion-icon name="power"></ion-icon>Sign Out </a> </h2>
+                                        <h2><a href="login-register.php"><ion-icon name="power"></ion-icon>Sign Out </a> </h2>
                                         <h2><a href="#" id="edit-button"><ion-icon name="create"></ion-icon>Edit profile </a> </h2>
                                     </div>
                                     
@@ -399,7 +399,7 @@
                                    
                                 <?php 
                                 
-                                $conn=mysqli_connect("localhost","root","","oceanstar");
+                                $conn=mysqli_connect("localhost","root","","oceanstars");
                                 if($conn->connect_error){
                                     die("Connection Failed:".$conn->connect_error);
                                 }
@@ -516,7 +516,7 @@
                                 <tbody>
                                 <?php 
                                 
-                                $conn=mysqli_connect("localhost","root","","oceanstar");
+                                $conn=mysqli_connect("localhost","root","","oceanstars");
                                 if($conn->connect_error){
                                     die("Connection Failed:".$conn->connect_error);
                                 }
@@ -524,7 +524,7 @@
                                    $result = mysqli_query($conn, "SELECT * FROM `tours`");
                                    if(mysqli_num_rows($result) > 0){
                                        while($row = $result->fetch_assoc()){
-                                           echo "<tr><td>". $row['name']."</td><td>".$row['city']."</td><td>".$row['country']."</td><td>".$row['dayNo']."</td><td>".$row['rate']."</td><td>".$row['cost']."</td><td>".$row['tourDate']."</td></tr>";
+                                           echo "<tr><td>". $row['name']."</td><td>".$row['City']."</td><td>".$row['Country']."</td><td>".$row['dayNo']."</td><td>".$row['rate']."</td><td>".$row['cost']."</td><td>".$row['tourDate']."</td></tr>";
                                        }
                                        echo "</table>";
                                    }
@@ -630,7 +630,7 @@
                                 <tbody>
                                 <?php 
                                 
-                                $conn=mysqli_connect("localhost","root","","oceanstar");
+                                $conn=mysqli_connect("localhost","root","","oceanstars");
                                 if($conn->connect_error){
                                     die("Connection Failed:".$conn->connect_error);
                                 }
@@ -638,7 +638,7 @@
                                    $result = mysqli_query($conn, "SELECT * FROM `hotels`");
                                    if(mysqli_num_rows($result) > 0){
                                        while($row = $result->fetch_assoc()){
-                                           echo "<tr><td>". $row['name']."</td><td>".$row['stars']."</td><td>".$row['city']."</td><td>".$row['country']."</td><td>".$row['costPerDay']."</td></tr>";
+                                           echo "<tr><td>". $row['name']."</td><td>".$row['stars']."</td><td>".$row['City']."</td><td>".$row['Country']."</td><td>".$row['CostPerDay']."</td></tr>";
                                        }
                                        echo "</table>";
                                    }
@@ -746,7 +746,7 @@
                                 <tbody>
                                 <?php 
                                 
-                                $conn=mysqli_connect("localhost","root","","oceanstar");
+                                $conn=mysqli_connect("localhost","root","","oceanstars");
                                 if($conn->connect_error){
                                     die("Connection Failed:".$conn->connect_error);
                                 }
@@ -754,7 +754,7 @@
                                    $result = mysqli_query($conn, "SELECT * FROM `flights`");
                                    if(mysqli_num_rows($result) > 0){
                                        while($row = $result->fetch_assoc()){
-                                           echo "<tr><td>". $row['AirlineName']."</td><td>".$row['ContFrom']."</td><td>".$row['ContTo']."</td><td>".$row['Time']."</td><td>".$row['Date']."</td><td>".$row['cost']."</td></tr>";
+                                           echo "<tr><td>". $row['AirlineName']."</td><td>".$row['ContFrom']."</td><td>".$row['ContTo']."</td><td>".$row['time']."</td><td>".$row['Date']."</td><td>".$row['cost']."</td></tr>";
                                        }
                                        echo "</table>";
                                    }
@@ -860,7 +860,7 @@
                                 <tbody>
                                 <?php 
                                 
-                                $conn=mysqli_connect("localhost","root","","oceanstar");
+                                $conn=mysqli_connect("localhost","root","","oceanstars");
                                 if($conn->connect_error){
                                     die("Connection Failed:".$conn->connect_error);
                                 }
@@ -1002,73 +1002,73 @@
     </div>
     <!-- End Footer area-->
     <!-- jquery
-		============================================ -->
+        ============================================ -->
     <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
     <!-- bootstrap JS
-		============================================ -->
+        ============================================ -->
     <script src="assets/js/bootstrap.min.js"></script>
     <!-- wow JS
-		============================================ -->
+        ============================================ -->
     <script src="assets/js/wow.min.js"></script>
     <!-- price-slider JS
-		============================================ -->
+        ============================================ -->
     <script src="assets/js/jquery-price-slider.js"></script>
     <!-- owl.carousel JS
-		============================================ -->
+        ============================================ -->
     <script src="assets/js/owl.carousel.min.js"></script>
     <!-- scrollUp JS
-		============================================ -->
+        ============================================ -->
     <script src="assets/js/jquery.scrollUp.min.js"></script>
     <!-- meanmenu JS
-		============================================ -->
+        ============================================ -->
     <script src="assets/js/meanmenu/jquery.meanmenu.js"></script>
     <!-- counterup JS
-		============================================ -->
+        ============================================ -->
     <script src="assets/js/counterup/jquery.counterup.min.js"></script>
     <script src="assets/js/counterup/waypoints.min.js"></script>
     <script src="assets/js/counterup/counterup-active.js"></script>
     <!-- mCustomScrollbar JS
-		============================================ -->
+        ============================================ -->
     <script src="assets/js/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
     <!-- jvectormap JS
-		============================================ -->
+        ============================================ -->
     <script src="assets/js/jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
     <script src="assets/js/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
     <script src="assets/js/jvectormap/jvectormap-active.js"></script>
     <!-- sparkline JS
-		============================================ -->
+        ============================================ -->
     <script src="assets/js/sparkline/jquery.sparkline.min.js"></script>
     <script src="assets/js/sparkline/sparkline-active.js"></script>
     <!-- flot JS
-		============================================ -->
+        ============================================ -->
     <script src="assets/js/flot/jquery.flot.js"></script>
     <script src="assets/js/flot/jquery.flot.resize.js"></script>
     <script src="assets/js/flot/curvedLines.js"></script>
     <script src="assets/js/flot/flot-active.js"></script>
     <!-- knob JS
-		============================================ -->
+        ============================================ -->
     <script src="assets/js/knob/jquery.knob.js"></script>
     <script src="assets/js/knob/jquery.appear.js"></script>
     <script src="assets/js/knob/knob-active.js"></script>
     <!--  wave JS
-		============================================ -->
+        ============================================ -->
     <script src="assets/js/wave/waves.min.js"></script>
     <script src="assets/js/wave/wave-active.js"></script>
     <!--  Chat JS
-		============================================ -->
-	<script src="assets/js/chat/moment.min.js"></script>
+        ============================================ -->
+    <script src="assets/js/chat/moment.min.js"></script>
     <script src="assets/js/chat/jquery.chat.js"></script>
     <!--  todo JS
-		============================================ -->
+        ============================================ -->
     <script src="assets/js/todo/jquery.todo.js"></script>
     <!-- plugins JS
-		============================================ -->
+        ============================================ -->
     <script src="assets/js/plugins.js"></script>
     <!-- main JS
-		============================================ -->
+        ============================================ -->
     <script src="assets/js/main2.js"></script>
-	<!-- tawk chat JS
-		============================================ -->
+    <!-- tawk chat JS
+        ============================================ -->
     <script src="assets/js/tawk-chat.js"></script>
 </body>
 

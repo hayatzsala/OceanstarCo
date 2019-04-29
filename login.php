@@ -1,16 +1,24 @@
 <?php
 session_start();
+
 ?>
 
 <?php
+
  //include 'index.php'; 
 // include database and object files
 include_once 'config.php';
 include_once 'user.php';
 
+
+// if(isset($_SESSION['id'])){
+//     die(header("location: 404.php"));
+// }
+
 //if(isset($_SESSION['id'])){
   //  die(header("location: 404.php"));
 //}
+
 
 // get database connection
 $database = new Database();
@@ -29,10 +37,17 @@ if($stmt->rowCount() > 0){
     //$_SESSION['is_login'] = true;
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
     if ($user->username == 'ghadeer.9816.ps@gmail.com'){
-        header("location :index-2.html");
+        header("location :index-2.php");
     }
-    else{///if($user->username)
-    header("location: packages.php"); 
+    else{
+
+      if($user->username==$row["email"]){
+
+        $_SESSION["clientName"]=$row["Fname"].$row["Lname"];
+        $_SESSION["id"]=$row["id"];
+      }
+    header("location: client1.php"); 
+   // $_SESSION['clientName']=$
     echo "WELCOME" ;
     }
     // create array
@@ -43,12 +58,14 @@ if($stmt->rowCount() > 0){
         //"username" => $row['username']
        // loggedin= "yes";
       //  if($user->$username && password_verify($user->$password, $user['password'])){
-      //  $_SESSION['id'] = $user['id'];
+        $_SESSION['username'] = $user->username;
+        echo $_SESSION['username'];
      // if()
    // );
-   header("location: packages.php");
+  // header("location: packages.php");
 }
 else{
+
     header("location: login-register.php");
   ///  $user_arr=array(
     //    "status" => false,
