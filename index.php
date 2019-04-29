@@ -168,7 +168,7 @@ include 'config.php';
       <div class="inner">
         <h2>Contact Me</h2>
 
-        <form action="#" method="post">
+        <form action="contact.php" method="post">
           <div class="field half first">
             <label for="name">Name</label>
             <input name="name" id="name" type="text" placeholder="Name" />

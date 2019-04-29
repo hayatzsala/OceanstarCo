@@ -266,33 +266,25 @@
                         <div class="table-responsive">
                             <table class="table table-hover table-inbox">
                                 <tbody>
-                                    <tr class="unread">
-                                        <td class="">
-                                            <label><input type="checkbox" checked="" class="i-checks"></label>
-                                        </td>
-                                        <td><a href="#">Jeremy Massey</a></td>
-                                        <td><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a>
-                                        </td>
-                                        <td class="text-right mail-date">Tue, Nov 25</td>
-                                    </tr>
-                                    <tr class="active">
-                                        <td class="">
-                                            <label><input type="checkbox" class="i-checks"></label>
-                                        </td>
-                                        <td><a href="#">Marshall Horne</a></td>
-                                        <td><a href="#">Praesent nec nisl sed neque ornare maximus at ac enim.</a>
-                                        </td>
-                                        <td class="text-right mail-date">Wed, Jan 13</td>
-                                    </tr>
-
-                                    <tr class="unread active">
-                                        <td class="">
-                                            <label><input type="checkbox" class="i-checks"></label>
-                                        </td>
-                                        <td><a href="#">Ferdinand Meadows</a></td>
-                                        <td><a href="#">Aenean hendrerit ligula eget augue gravida semper.</a></td>
-                                        <td class="text-right mail-date">Sat, Aug 29</td>
-                                    </tr>
+                                <?php 
+                                
+                                $conn=mysqli_connect("localhost","root","","oceanstar");
+                                if($conn->connect_error){
+                                    die("Connection Failed:".$conn->connect_error);
+                                }
+                                   $sql = "SELECT * FROM `emails` " ;
+                                   $result = mysqli_query($conn, "SELECT * FROM `emails`");
+                                   if(mysqli_num_rows($result) > 0){
+                                       while($row = $result->fetch_assoc()){
+                                           echo "<tr><td>". $row['name']."</td><td>".$row['email']."</td><td>".$row['message']."</td></tr>";
+                                       }
+                                       echo "</table>";
+                                   }
+                                   else {
+                                       echo "0 result";
+                                   }
+                                   $conn ->close();
+                                   ?>    
                                 </tbody>
                             </table>
                             <div class="pagination-inbox">
@@ -399,7 +391,7 @@
                                    
                                 <?php 
                                 
-                                $conn=mysqli_connect("localhost","root","","oceanstars");
+                                $conn=mysqli_connect("localhost","root","","oceanstar");
                                 if($conn->connect_error){
                                     die("Connection Failed:".$conn->connect_error);
                                 }
@@ -516,7 +508,7 @@
                                 <tbody>
                                 <?php 
                                 
-                                $conn=mysqli_connect("localhost","root","","oceanstars");
+                                $conn=mysqli_connect("localhost","root","","oceanstar");
                                 if($conn->connect_error){
                                     die("Connection Failed:".$conn->connect_error);
                                 }
@@ -630,7 +622,7 @@
                                 <tbody>
                                 <?php 
                                 
-                                $conn=mysqli_connect("localhost","root","","oceanstars");
+                                $conn=mysqli_connect("localhost","root","","oceanstar");
                                 if($conn->connect_error){
                                     die("Connection Failed:".$conn->connect_error);
                                 }
@@ -746,7 +738,7 @@
                                 <tbody>
                                 <?php 
                                 
-                                $conn=mysqli_connect("localhost","root","","oceanstars");
+                                $conn=mysqli_connect("localhost","root","","oceanstar");
                                 if($conn->connect_error){
                                     die("Connection Failed:".$conn->connect_error);
                                 }
@@ -860,7 +852,7 @@
                                 <tbody>
                                 <?php 
                                 
-                                $conn=mysqli_connect("localhost","root","","oceanstars");
+                                $conn=mysqli_connect("localhost","root","","oceanstar");
                                 if($conn->connect_error){
                                     die("Connection Failed:".$conn->connect_error);
                                 }
