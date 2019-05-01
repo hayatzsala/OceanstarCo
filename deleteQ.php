@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "oceanstar";
+$dbname = "oceanstars";
 
 
 if (isset($_POST['idd'])){

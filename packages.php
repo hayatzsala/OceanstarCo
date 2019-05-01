@@ -3,8 +3,8 @@
 
 <?php
 session_start();
-$_SESSION["username"]="hayatzs.4ever@gmail.com";
-$_SESSION["id"]="hayat";
+// $_SESSION["username"]="hayatzs.4ever@gmail.com";
+// $_SESSION["id"]="hayat";
 ?>
 <html lang="en">
   <head>

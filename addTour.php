@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "oceanstar";
+$dbname = "oceanstars";
 
 
 if (isset($_POST['name'])&&isset($_POST['cost'])&&isset($_POST['rate'])&&isset($_POST['date'])&&isset($_POST['dayno'])&&isset($_POST['city'])&&isset($_POST['country'])){
@@ -23,7 +23,7 @@ if (!$conn) {
 }
 
 // sql to delete a record
-$sql = "INSERT INTO tours (`name`,`cost`,`rate`,`tourDate`,`dayNo`,`city`,`country`) VALUES ('$name','$cost','$rate','$date','$dayno','$city','$country')";
+$sql = "INSERT INTO tours (`name`,`cost`,`rate`,`tourDate`,`dayNo`,`City`,`Country`) VALUES ('$name','$cost','$rate','$date','$dayno','$city','$country')";
 
 if (mysqli_query($conn, $sql)) {
     //echo "Record deleted successfully";

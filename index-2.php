@@ -1,3 +1,24 @@
+<?php
+session_start();
+ $conn=mysqli_connect("localhost","root","","oceanstars");
+             if($conn->connect_error){
+                 die("Connection Failed:".$conn->connect_error);
+               }
+
+                             
+   $stmt = mysqli_query($conn, "SELECT * FROM `admins` WHERE `email`='".$_SESSION["username"]."'");
+
+
+   if(mysqli_num_rows($stmt)>0){
+    $profileData=mysqli_fetch_assoc($stmt);
+    
+   }
+   else
+   {
+    echo 'nooooo';
+   }
+
+?>
 <!doctype html>
 <html class="no-js" lang="">
 
@@ -87,7 +108,7 @@
                                 <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><ion-icon name="cog"></ion-icon></span></a>
                                 <div role="menu" class="dropdown-menu message-dd animated zoomIn">
                                     <div class="hd-mg-tt">
-                                        <h2><a href="login-register.php"><ion-icon name="power"></ion-icon>Sign Out </a> </h2>
+                                        <h2><a href="logout.php"><ion-icon name="power"></ion-icon>Sign Out </a> </h2>
                                         <h2><a href="#" id="edit-button"><ion-icon name="create"></ion-icon>Edit profile </a> </h2>
                                     </div>
                                     
@@ -120,9 +141,9 @@
                                 <li><a data-toggle="collapse" data-target="#Profile" href="#">My Profile</a>
                                     
                                 </li>
-                                <li><a data-toggle="collapse" data-target="#" href="#">Charts</a>
+                               <!--  <li><a data-toggle="collapse" data-target="#" href="#">Charts</a>
                                     
-                                </li>
+                                </li> -->
                                 <li><a data-toggle="collapse" data-target="#" href="#">Tables</a>
                                     <ul id="demodepart" class="collapse dropdown-header-top">
                                         <li><a href="#Users">Customers</a></li>
@@ -154,8 +175,8 @@
                         </li>
                         <li id="profile-tapped"><a data-toggle="tab" href="#Interface"><i class="notika-icon notika-edit"></i> My Profile</a>
                         </li>
-                        <li id="chart-tapped"><a data-toggle="tab" href="#Charts"><i class="notika-icon notika-bar-chart"></i> Charts</a>
-                        </li>
+                        <!-- <li id="chart-tapped"><a data-toggle="tab" href="#Charts"><i class="notika-icon notika-bar-chart"></i> Charts</a>
+                        </li> -->
                         <li id="contTable"><a data-toggle="tab" href="#Tables"><i class="notika-icon notika-windows"></i> Tables</a>
                         </li>
                     </ul>
@@ -194,7 +215,7 @@
                                     <img src="images/1.png" alt="" />
                                 </div>
                                 <div class="hd-mg-ctn">
-                                    <h3> NAME OF ADMIN </h3>
+                                    <h3>  <?php echo "Ghadir Shraim" ?> </h3>
                                     <p>Welcome to OceanStar's Family</p>
                                 </div>
                             </div>
@@ -266,33 +287,43 @@
                         <div class="table-responsive">
                             <table class="table table-hover table-inbox">
                                 <tbody>
-                                    <tr class="unread">
-                                        <td class="">
-                                            <label><input type="checkbox" checked="" class="i-checks"></label>
-                                        </td>
-                                        <td><a href="#">Jeremy Massey</a></td>
-                                        <td><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a>
-                                        </td>
-                                        <td class="text-right mail-date">Tue, Nov 25</td>
-                                    </tr>
-                                    <tr class="active">
-                                        <td class="">
-                                            <label><input type="checkbox" class="i-checks"></label>
-                                        </td>
-                                        <td><a href="#">Marshall Horne</a></td>
-                                        <td><a href="#">Praesent nec nisl sed neque ornare maximus at ac enim.</a>
-                                        </td>
-                                        <td class="text-right mail-date">Wed, Jan 13</td>
-                                    </tr>
+                                    <?php 
 
-                                    <tr class="unread active">
-                                        <td class="">
-                                            <label><input type="checkbox" class="i-checks"></label>
-                                        </td>
-                                        <td><a href="#">Ferdinand Meadows</a></td>
-                                        <td><a href="#">Aenean hendrerit ligula eget augue gravida semper.</a></td>
-                                        <td class="text-right mail-date">Sat, Aug 29</td>
-                                    </tr>
+                                
+
+                                $conn=mysqli_connect("localhost","root","","oceanstars");
+
+                                if($conn->connect_error){
+
+                                    die("Connection Failed:".$conn->connect_error);
+
+                                }
+
+                                   $sql = "SELECT * FROM `emails` " ;
+
+                                   $result = mysqli_query($conn, "SELECT * FROM `emails`");
+
+                                   if(mysqli_num_rows($result) > 0){
+
+                                       while($row = $result->fetch_assoc()){
+
+                                           echo "<tr><td>". $row['name']."</td><td>".$row['email']."</td><td>".$row['message']."</td></tr>";
+
+                                       }
+
+                                       echo "</table>";
+
+                                   }
+
+                                   else {
+
+                                       echo "0 result";
+
+                                   }
+
+                                   $conn ->close();
+
+                                   ?>    
                                 </tbody>
                             </table>
                             <div class="pagination-inbox">
@@ -358,14 +389,8 @@
 </form>
    
   </div>
-  <a  data-placement="left" title="Download Report" class="btn"  data-target="#multiCollapseExample9" data-toggle="collapse" href="#multiCollapseExample9" role="button" aria-expanded="false" aria-controls="multiCollapseExample9"><ion-icon name="close"></ion-icon>Edit</a>
-  <div class="collapse multi-collapse" id="multiCollapseExample9">
-      <form action="editCus.php" method="post">
-    <input type="text" name="idcust" id="idcust" class="form-control" placeholder="Enter the id of the tour that u want to delete">
-    <button type="submit" class="btn btn-primary">Edit</button>
-</form>
-   
-  </div>
+  
+  
                                 </div>
                             </div>
                         </div>
@@ -474,14 +499,7 @@
     </form>
        
       </div>
-      <a  data-placement="left" title="Download Report" class="btn"  data-target="#multiCollapseExample11" data-toggle="collapse" href="#multiCollapseExample11" role="button" aria-expanded="false" aria-controls="multiCollapseExample11"><ion-icon name="close"></ion-icon>Edit</a>
-      <div class="collapse multi-collapse" id="multiCollapseExample11">
-          <form action="EditTour.php" method="post">
-        <input type="text" name="idtou" id="idtou" class="form-control" placeholder="Enter the id of the tour that u want to delete">
-        <button type="submit" class="btn btn-primary">Edit</button>
-    </form>
-       
-      </div>
+      
                                     </div>
                                 </div>
                         </div>
@@ -589,14 +607,7 @@
        
       </div>
 
-      <a  data-placement="left" title="Download Report" class="btn"  data-target="#multiCollapseExample13" data-toggle="collapse" href="#multiCollapseExample13" role="button" aria-expanded="false" aria-controls="multiCollapseExample13"><ion-icon name="close"></ion-icon>Edit</a>
-      <div class="collapse multi-collapse" id="multiCollapseExample13">
-          <form action="EditHotel.php" method="post">
-        <input type="text" name="idhot" id="idhot" class="form-control" placeholder="Enter the id of the tour that u want to delete">
-        <button type="submit" class="btn btn-primary">Edit</button>
-    </form>
-       
-      </div>
+      
                                     </div>
                                 </div>
                         </div>
@@ -704,14 +715,7 @@
     </form>
        
       </div>
-      <a  data-placement="left" title="Download Report" class="btn"  data-target="#multiCollapseExample15" data-toggle="collapse" href="#multiCollapseExample15" role="button" aria-expanded="false" aria-controls="multiCollapseExample15"><ion-icon name="close"></ion-icon>Edit</a>
-      <div class="collapse multi-collapse" id="multiCollapseExample15">
-          <form action="EditFlight.php" method="post">
-        <input type="text" name="idfligh" id="idfligh" class="form-control" placeholder="Enter the id of the tour that u want to delete">
-        <button type="submit" class="btn btn-primary">Edit</button>
-    </form>
-       
-      </div>
+      
                                     </div>
                                 </div>
                         </div>
@@ -819,15 +823,7 @@
     </form>
        
       </div>
-      <a  data-placement="left" title="Download Report" class="btn"  data-target="#multiCollapseExample7" data-toggle="collapse" href="#multiCollapseExample7" role="button" aria-expanded="false" aria-controls="multiCollapseExample7"><ion-icon name="close"></ion-icon>Edit</a>
-      <div class="collapse multi-collapse" id="multiCollapseExample7">
-          <form action="EditCar.php" method="post">
-        <input type="text" name="idcar" id="idcar" class="form-control" placeholder="Enter the id of the tour that u want to delete">
-        <button type="submit" class="btn btn-primary">Edit</button>
-    </form>
-       
-      </div>
-
+      
 
                                     </div>
                                 </div>
@@ -888,75 +884,63 @@
 </div>
 <div class="breadcomb-area" id="Profile" style="display: none;">
     <div class="container">
-        <div class="row">
-            <div class="col-12">
-                    <div class="breadcomb-list">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div class="breadcomb-wp">
-                                    <div class="hd-message-img">
-                                    <img src="images/2.png" alt="" />
-                                </div>
-                                    <div class="breadcomb-ctn">
-                                        <h2>Admin name</h2>
-                                        <p>Worker at OceanStars Company.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
-                                <div class="breadcomb-report">
-                                    <button type="button" class="btn btn-secondary btn-sm">
-                                    <ion-icon name="attach"></ion-icon>Upload picture</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                            
-                </div>
+        <div id="data-section" style="display: block;">
+           <form action="editInfo.php" method="Get">
+      <div class="form-row">
+        <div class="col-md-4 mb-3">
+          <label for="validationDefault01">First name</label>
+          <input type="text" class="form-control" id="Fname" placeholder="First name" value="<?php echo $profileData["Fname"];?>" required>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="validationDefault02">Last name</label>
+          <input type="text" class="form-control" id="Lname" placeholder="Last name" value="<?php echo $profileData["Lname"];?>" required>
+        </div>
+        
+      </div>
+      <div class="form-row">
+        <div class="col-md-4 mb-3">
+        <label for="exampleInputEmail1">Email</label>
+          <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="col-form-label" value="<?php echo $profileData["email"];?>">
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="validationDefault04">Phone number</label>
+          <input type="text" class="form-control" id="phone-no" placeholder=" _ _ _ - _ _ _ - _ _ _ _" value="<?php echo $profileData["phone-no"];?>" required >
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-md-4 mb-3">
+            <label for="validationDefault04">Gender</label>
+            <select class="custom-select custom-select-lg mb-3">
+                <?php
+                if($profileData["gender"]=="femal"){
+                    echo ' <option value="1">Male</option>
+                 <option value="2" selected>Female</option>';
+
+                }
+                else if($profileData["gender"]=="male"){
+                    echo ' <option value="1" selected>Male</option>
+                 <option value="2" >Female</option>';
+                }
+                else{
+                    echo ' <option selected></option> <option value="1" >Male</option>
+                 <option value="2" >Female</option>';
+
+                }
+
+                ?>
+                
+            </select>
             
         </div>
-    <div class="container">
-        <div id="data-section" style="display: block;">
-       <form >
-  <div class="form-row">
-    <div class="col-md-4 mb-3">
-      <label for="validationDefault01">First name</label>
-      <input type="text" name="fname" class="form-control" id="fname" placeholder="First name" value="" required>
+    
+        <div class="col-md-5 mb-3">
+            <label for="validationDefault01" >Birtdate</label>
+            <input type="Date" id="birthdate" class="" placeholder="" value="<?php echo $profileData["birthdate"];?>">
+            
+        </div>
+         
     </div>
-    <div class="col-md-4 mb-3">
-      <label for="validationDefault02">Last name</label>
-      <input type="text" class="form-control" name="lname" placeholder="Last name" value="" required>
     </div>
-  </div>
-  <div class="form-row">
-    <div class="col-md-4 mb-3">
-    <label for="exampleInputEmail1">Email</label>
-      <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="col-form-label">
-    </div>
-    <div class="col-md-4 mb-3">
-      <label for="validationDefault04">Phone number</label>
-      <input type="text" class="form-control" name="no" placeholder=" _ _ _ - _ _ _ - _ _ _ _" required>
-    </div>
-  </div>
-  <div class="form-row">
-    <div class="col-md-4 mb-3">
-        <label for="validationDefault04">Gender</label>
-        <select  id="gender" class="custom-select custom-select-lg mb-3">
-            <option selected></option>
-             <option value="1">Male</option>
-             <option value="2">Female</option>
-        </select>
-        
-    </div>
-
-    <div class="col-md-5 mb-3">
-        <label for="validationDefault01" >Birthdate</label>
-        <input type="Date" name="birthdate" class="" placeholder="">
-        
-    </div>
-     
-  </div>
-</div>
   <div class="form-row" id="password-section" style="display: none;">
       <div class="col-md-4 mb-3">
       <label for="validationDefault01">New password</label>

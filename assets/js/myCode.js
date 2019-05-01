@@ -148,10 +148,10 @@
     var old=document.getElementById('oldpassword').value;
     var newp=document.getElementById('password').value;
     var newp2=document.getElementById('password2').value;
-    var email=document.getElementById('email'),value;
-
+    var email=document.getElementById('emaill'),value;
+    var Fname=document.getElementById('Fname').value;
     if(newp==newp2){
-            var obj ={"oldPassword":old,"newPassword":newp,"email":email};
+            var obj ={"oldPassword":old,"newPassword":newp,"Fname":Fname};
             window.alert(old);
             var db_param=JSON.stringify(obj);
             var xhttp = new XMLHttpRequest();
@@ -163,7 +163,7 @@
     window.alert(this.responseText);
              } 
              };
-            xhttp.open("GET", "editInfo.php?x="+db_param, true);
+            xhttp.open("GET", "editInfo.php? n ="+db_param, true);
             xhttp.send();
 
     }

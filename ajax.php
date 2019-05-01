@@ -1,5 +1,5 @@
 <?php 
-$conn=mysqli_connect("localhost","root","","oceanstar");
+$conn=mysqli_connect("localhost","root","","oceanstars");
 if($conn->connect_error){
     die("Connection Failed:".$conn->connect_error);
 }

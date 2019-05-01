@@ -30,13 +30,22 @@ $user = new User($db);
 $user->username = isset($_GET['username']) ? $_GET['username'] : die();
 $user->password = isset($_GET['password']) ? $_GET['password'] : die();
 // read the details of user to be edited
+// if ($user->username == 'ghadeer.9816.ps@gmail.com'){
+//        $_SESSION["username"];
+//         $_SESSION["adminName"]=$row["Fname"].$row["Lname"];
+//         $_SESSION["id"]=$row["id"];
+//         header("location :index-2.php");
+//     }
 $stmt = $user->login();
 if($stmt->rowCount() > 0){
     // get retrieved row
-    //$_SESSION['email'] = $user->username;
+    // $_SESSION['username'] ='ghadeer.9816.ps@gmail.com';
     //$_SESSION['is_login'] = true;
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
     if ($user->username == 'ghadeer.9816.ps@gmail.com'){
+      
+      $_SESSION["adminName"]=$row["Fname"].$row["Lname"];
+        $_SESSION["id"]=$row["id"];
         header("location :index-2.php");
     }
     else{

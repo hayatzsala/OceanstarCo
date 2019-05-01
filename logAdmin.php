@@ -5,6 +5,8 @@ session_start();
 ///if(isset($_SESSION['id'])){
    // die(header("location: 404.php"));
 //}
+
+
 ?>
 <html lang="en" >
 <head>
@@ -26,7 +28,9 @@ session_start();
         <div class="group">
           <label for="user" class="label">Username</label>
           <input id="username" name="username" type="text" class="input">
-          
+          <?php  $_SESSION['username']="ghadeer.9816.ps@gmail.com" ;
+
+          ?>
         </div>
         <div class="group">
           <label for="pass" class="label">Password</label>
@@ -36,40 +40,22 @@ session_start();
           <input id="check" type="checkbox" class="check" checked>
           <label for="check"><span class="icon"></span> Keep me Signed in</label>
         </div>
-        <div class="group">
-          <input type="submit" class="button" value="Sign In">
+        <div class="group"><a href="index-2.php">
+          <input type="button" class="button" value="Sign In"></a>
         </div>
         <div class="hr"></div>
-        <div class="foot-lnk">
-          <a href="logAdmin.php">login as admin?</a>
-        </div>
+       
       </form>
-      <form class="sign-up-htm" action="signup.php" method="POST">
-        <div class="group">
-          <label for="user" class="label">Username</label>
-          <input id="username" name="username" type="text" class="input">
         </div>
-        <div class="group">
-          <label for="pass" class="label">Password</label>
-          <input id="password" name="password" type="password" class="input" data-type="password">
-        </div>
-        <div class="group">
-          <label for="pass" class="label">Confirm Password</label>
-          <input id="pass" type="password" name="pass" class="input" data-type="password">
-        </div>
-        <div class="group">
-          <input type="submit" class="button" value="Sign Up">
-        </div>
-        <div class="hr"></div>
-        <div class="foot-lnk">
-          <label for="tab-1">Already Member?</a>
-        </div>
-      </form>
-    </div>
   </div>
 </div>
   
   
 </body>
 </html>
+
+<?php
+
+
+?>
 

@@ -1,7 +1,7 @@
 <?php
 session_start();
-$_SESSION["Fname"]="Hayat";
-$_SESSION["Lname"]="Salawdeh";
+// $_SESSION["Fname"]="Hayat";
+// $_SESSION["Lname"]="Salawdeh";
  
   $conn=mysqli_connect("localhost","root","","oceanstars");
              if($conn->connect_error){
@@ -96,7 +96,7 @@ $_SESSION["Lname"]="Salawdeh";
                                 <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><ion-icon name="cog"></ion-icon></span></a>
                                 <div role="menu" class="dropdown-menu message-dd animated zoomIn">
                                     <div class="hd-mg-tt">
-                                        <h2><a href="login-register.html"><ion-icon name="power"></ion-icon>Sign Out </a> </h2>
+                                        <h2><a href="logout.php"><ion-icon name="power"></ion-icon>Sign Out </a> </h2>
                                         <h2><a href="#" id="edit-button"><ion-icon name="create"></ion-icon>Edit profile </a> </h2>
                                     </div>
                                     
@@ -167,7 +167,7 @@ $_SESSION["Lname"]="Salawdeh";
                                     <img src="images/1.png" alt="" />
                                 </div>
                                 <div class="hd-mg-ctn">
-                                    <h3> <?php echo $_SESSION["Fname"].' '.$_SESSION["Lname"]; ?> </h3>
+                                    <h3> <?php echo $profileData["Fname"].' '.$profileData["Lname"]; ?> </h3>
                                     <p>Welcome to OceanStar's Family</p>
                                 </div>
                             </div>
@@ -221,7 +221,7 @@ $_SESSION["Lname"]="Salawdeh";
                                         <img src="images/2.png" alt="" />
                                     </div>
                                         <div class="breadcomb-ctn">
-                                            <h2>Client name</h2>
+                                            <h2><?php echo $profileData["Fname"].' '.$profileData["Lname"]; ?></h2>
                                             
                                         </div>
                                     </div>
@@ -255,7 +255,7 @@ $_SESSION["Lname"]="Salawdeh";
       <div class="form-row">
         <div class="col-md-4 mb-3">
         <label for="exampleInputEmail1">Email</label>
-          <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="col-form-label" value="<?php echo $profileData["email"];?>">
+          <input type="email" class="form-control" id="emaill" aria-describedby="emailHelp" placeholder="col-form-label" value="<?php echo $profileData["email"];?>">
         </div>
         <div class="col-md-4 mb-3">
           <label for="validationDefault04">Phone number</label>
@@ -311,9 +311,9 @@ $_SESSION["Lname"]="Salawdeh";
         </div>
     </div>
       <div class="form-buttons" >
-      <input type="submit" id="Save" value="Save Changes" ></button>
+      <button class="btn btn-primary" id="Save" value="Save Changes" onclick="resetpass()" >Save changes</button>
 
-      <button class="btn btn-primary" type="button" id="Reset" onclick="resetpass()">Reset password</button>
+      <button class="btn btn-primary" type="button" id="Reset" >Reset password</button>
       </div>
     </form>
     
@@ -423,7 +423,7 @@ $_SESSION["Lname"]="Salawdeh";
                                 .'<br>';
 
 
-                                echo '<button type="button" class="btn btn-success">Check out!</button>
+                                 echo '<button type="button" class="btn btn-success">Check out!</button>
                                     <button type="button" class="btn btn-danger" )">Delete</button>'.'<br>';
 
 

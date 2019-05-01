@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "oceanstar";
+$dbname = "oceanstars";
 
 
 
@@ -19,7 +19,7 @@ if (!$conn) {
 }
 
 // sql to delete a record
-$sql = "DELETE FROM `hotels` WHERE `id`= '$id'";
+$sql = "DELETE FROM `hotels` WHERE `name`= '$id'";
 
 if (mysqli_query($conn, $sql)) {
     //echo "Record deleted successfully";

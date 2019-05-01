@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "oceanstar";
+$dbname = "oceanstars";
 
 
 if (isset($_POST['name'])&&isset($_POST['from'])&&isset($_POST['to'])&&isset($_POST['date'])&&isset($_POST['time'])&&isset($_POST['cost'])){
