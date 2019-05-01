@@ -9,6 +9,7 @@ session_start();
 // include database and object files
 include_once 'config.php';
 include_once 'user.php';
+$table = "users";
 
 
 // if(isset($_SESSION['id'])){
@@ -42,10 +43,14 @@ if($stmt->rowCount() > 0){
     // $_SESSION['username'] ='ghadeer.9816.ps@gmail.com';
     //$_SESSION['is_login'] = true;
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
+<<<<<<< HEAD
     if ($user->username == 'ghadeer.9816.ps@gmail.com'){
       
       $_SESSION["adminName"]=$row["Fname"].$row["Lname"];
         $_SESSION["id"]=$row["id"];
+=======
+    if ($stmt->user->username == 'ghadeer.9816.ps@gmail.com'){
+>>>>>>> origin/master
         header("location :index-2.php");
     }
     else{

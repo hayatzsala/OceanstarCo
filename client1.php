@@ -3,7 +3,7 @@ session_start();
 // $_SESSION["Fname"]="Hayat";
 // $_SESSION["Lname"]="Salawdeh";
  
-  $conn=mysqli_connect("localhost","root","","oceanstars");
+  $conn=mysqli_connect("localhost","root","","oceanstar");
              if($conn->connect_error){
                  die("Connection Failed:".$conn->connect_error);
                }

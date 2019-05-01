@@ -337,10 +337,14 @@ include 'config.php';
 
         <h2>Contact Me</h2>
 
+<<<<<<< HEAD
 
 
         <form action="contact.php" method="post">
 
+=======
+        <form action="contact.php" method="post">
+>>>>>>> origin/master
           <div class="field half first">
 
             <label for="name">Name</label>

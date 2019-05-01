@@ -287,6 +287,7 @@ session_start();
                         <div class="table-responsive">
                             <table class="table table-hover table-inbox">
                                 <tbody>
+<<<<<<< HEAD
                                     <?php 
 
                                 
@@ -323,6 +324,26 @@ session_start();
 
                                    $conn ->close();
 
+=======
+                                <?php 
+                                
+                                $conn=mysqli_connect("localhost","root","","oceanstar");
+                                if($conn->connect_error){
+                                    die("Connection Failed:".$conn->connect_error);
+                                }
+                                   $sql = "SELECT * FROM `emails` " ;
+                                   $result = mysqli_query($conn, "SELECT * FROM `emails`");
+                                   if(mysqli_num_rows($result) > 0){
+                                       while($row = $result->fetch_assoc()){
+                                           echo "<tr><td>". $row['name']."</td><td>".$row['email']."</td><td>".$row['message']."</td></tr>";
+                                       }
+                                       echo "</table>";
+                                   }
+                                   else {
+                                       echo "0 result";
+                                   }
+                                   $conn ->close();
+>>>>>>> origin/master
                                    ?>    
                                 </tbody>
                             </table>
@@ -424,7 +445,7 @@ session_start();
                                    
                                 <?php 
                                 
-                                $conn=mysqli_connect("localhost","root","","oceanstars");
+                                $conn=mysqli_connect("localhost","root","","oceanstar");
                                 if($conn->connect_error){
                                     die("Connection Failed:".$conn->connect_error);
                                 }
@@ -534,7 +555,7 @@ session_start();
                                 <tbody>
                                 <?php 
                                 
-                                $conn=mysqli_connect("localhost","root","","oceanstars");
+                                $conn=mysqli_connect("localhost","root","","oceanstar");
                                 if($conn->connect_error){
                                     die("Connection Failed:".$conn->connect_error);
                                 }
@@ -641,7 +662,7 @@ session_start();
                                 <tbody>
                                 <?php 
                                 
-                                $conn=mysqli_connect("localhost","root","","oceanstars");
+                                $conn=mysqli_connect("localhost","root","","oceanstar");
                                 if($conn->connect_error){
                                     die("Connection Failed:".$conn->connect_error);
                                 }
@@ -750,7 +771,7 @@ session_start();
                                 <tbody>
                                 <?php 
                                 
-                                $conn=mysqli_connect("localhost","root","","oceanstars");
+                                $conn=mysqli_connect("localhost","root","","oceanstar");
                                 if($conn->connect_error){
                                     die("Connection Failed:".$conn->connect_error);
                                 }
@@ -856,7 +877,7 @@ session_start();
                                 <tbody>
                                 <?php 
                                 
-                                $conn=mysqli_connect("localhost","root","","oceanstars");
+                                $conn=mysqli_connect("localhost","root","","oceanstar");
                                 if($conn->connect_error){
                                     die("Connection Failed:".$conn->connect_error);
                                 }
